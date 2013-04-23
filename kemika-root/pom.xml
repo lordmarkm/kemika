@@ -40,11 +40,6 @@
 		<dependencies>
 
 			<!-- PROJECT -->
-			<dependency>
-				<groupId>BlackMarket</groupId>
-				<artifactId>d3-security</artifactId>
-				<version>${project.version}</version>
-			</dependency>
 
 			<!-- SPRING -->
 			<dependency>
