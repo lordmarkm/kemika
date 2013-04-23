@@ -12,11 +12,6 @@
 	<name>Kemika :: Web</name>
 
 	<dependencies>
-		<!-- PROJECT -->
-		<dependency>
-			<groupId>BlackMarket</groupId>
-			<artifactId>d3-security</artifactId>
-		</dependency>
 
 		<!-- SPRING -->
 		<dependency>
