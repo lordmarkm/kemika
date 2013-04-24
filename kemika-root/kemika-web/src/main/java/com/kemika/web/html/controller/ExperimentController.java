@@ -16,4 +16,7 @@ public interface ExperimentController {
 
 	@RequestMapping(value = "/foodproductlist", method = RequestMethod.GET)
 	public ModelAndView foodproductlist();
+	
+	@RequestMapping(value = "/cosmeticsproductlist", method = RequestMethod.GET)
+	public ModelAndView cosmeticsproductlist();
 }

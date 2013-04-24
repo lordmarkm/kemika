@@ -11,7 +11,7 @@
             <li><a href="#mission" data-toggle="tab">Mission</a></li>
           </ul>
           <div class="tab-content">
-            <div class="tab-pane active" id="vision">
+            <div class="tab-pane active" id="visio              	<li>Food Grade Lubricants</li>n">
               <p>vision stuff here...</p>
             </div>
             <div class="tab-pane" id="mission">
@@ -44,7 +44,7 @@
             </div>
             <div class="tab-pane" id="value3">
               <p>third value stuff</p>
-            </div>
+            </div>pull-right
             <div class="tab-pane" id="value4">
               <p>fourth value stuff</p>
             </div>
@@ -63,7 +63,7 @@
       </div>
     </div>
 
-    <div class="navbar">
+    <div class="navbar pull-right">
       <ul class="nav">
         <li><a href="/experiment" role="button">Kemika Home</a></li>
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">About Kemika</a>
@@ -75,18 +75,13 @@
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Product Lists</a>
           <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
             <li><a tabindex="-1" href="/foodproductlist" role="button" data-toggle="modal">Food</a></li>
-            <li><a tabindex="-1" href="#Watermodal" role="button" data-toggle="modal">Water</a></li>
+            <li><a tabindex="-1" href="/cosmeticsproductlist" role="button" data-toggle="modal">Cosmetics</a></li>
             <li><a tabindex="-1" href="#Minemodal" role="button" data-toggle="modal">Mining</a></li>
           </ul></li>
         <li><a href="/contactus" role="button" data-toggle="modal">Contact Us</a></li>
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Links and Stuff</a>
-          <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-            <li><a tabindex="-1" href="http://www.helenachemical.com/Pages/home.aspx">Helena</a></li>
-            <li><a tabindex="-1" href="http://www.eastman.com/Pages/Home.aspx">Eastman</a></li>
-          </ul></li>
       </ul>
 
-      <form class="navbar-search pull-right">
+      <form class="navbar-search">
         <input type="text" class="search-query" placeholder="Search">
       </form>
     </div>

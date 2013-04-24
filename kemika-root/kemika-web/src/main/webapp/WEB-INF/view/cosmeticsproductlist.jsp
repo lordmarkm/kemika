@@ -19,20 +19,23 @@
   
   <div class="clearfix"></div>
   
-  <div class="container">
+  <div class="container">        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Links and Stuff</a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+            <li><a tabindex="-1" href="http://www.helenachemical.com/Pages/home.aspx">Helena</a></li>
+            <li><a tabindex="-1" href="http://www.eastman.com/Pages/Home.aspx">Eastman</a></li>
+          </ul></li>
       <div class="row">
           <div class="span1">
-              Food Products
+              Cosmetic Products:
           </div>
            <div class="span3">
               <ul>
-              	<li>Commodities</li>
-              	<li>Flavors</li>
-              	<li>Natural Colors</li>
-              	<li>Sweeteners</li>
-              	<li>Hydrocolloids</li>
-              	<li>Preservatives</li>
-              	<li>Food Grade Lubricants</li>
+              	<li>Botanical Extracts</li>
+              	<li>Fragrances</li>
+              	<li>Essential Oils</li>
+              	<li>Soap Bases</li>
+              	<li>Dry Botanicals</li>
+              	<li>Oleoresins</li>
               </ul>
           </div>
       </div>

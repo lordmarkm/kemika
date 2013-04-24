@@ -19,4 +19,8 @@ public class ExperimentControlerImpl implements ExperimentController{
 	public ModelAndView foodproductlist() {
 		return new ModelAndView("foodproductlist");
 	}
+	
+	public ModelAndView cosmeticsproductlist() {
+		return new ModelAndView("cosmeticsproductlist");
+	}
 }
