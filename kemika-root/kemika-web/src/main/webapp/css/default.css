@@ -15,4 +15,7 @@ html,body {
 
 #footer {
   background-color: grey;
+  width:100%;
+  position:absolute;
+  bottom:0;
 }

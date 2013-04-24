@@ -13,21 +13,15 @@
 </head>
 
 <body>
-  
+  <div id="wrap">
   <@navbar.navbar />
-
-    <div style="height: 1000px;"></div>
-    <div id="push"></div>
+  <div class="clearfix"></div>
+  
+  <div class="row text-center">
+      
   </div>
-  <div id="footer">
-    <div class="container">
-      Footer lol
-
-      <div class="pull-right">
-        <div class="btn">Wat</div>
-      </div>
-    </div>
-  </div>
+ 
+  <@navbar.footer />
 </body>
 
 </html>
