@@ -12,7 +12,7 @@
 		<meta name="author" content="Mark Martinez" />
 		<link rel="shortcut icon" href="<@spring.url '/images/favicon.ico' />"> 
         <link rel="stylesheet" type="text/css" href="<@spring.url '/libs/CircularContentCarousel/css/demo.css' />" />
-		<link rel="stylesheet" type="text/css" href="<@spring.url '/libs/CircularContentCarousel/css/style.css' />" />
+		<link rel="stylesheet" type="text/css" href="<@spring.url '/css/splash.css' />" />
 		<link rel="stylesheet" type="text/css" href="<@spring.url '/libs/CircularContentCarousel/css/jquery.jscrollpane.css' />" media="all" />
 		<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow&v1' rel='stylesheet' type='text/css' />
 		<link href='http://fonts.googleapis.com/css?family=Coustard:900' rel='stylesheet' type='text/css' />
@@ -26,10 +26,10 @@
 					<div class="ca-item ca-item-1">
 						<div class="ca-item-main">
 							<div class="ca-icon"></div>
-							<h3>Stop factory farming</h3>
+							<h3>Cosmetics</h3>
 							<h4>
 								<span class="ca-quote">&ldquo;</span>
-								<span>The greatness of a nation and its moral progress can be judged by the way in which its animals are treated.</span>
+								<span>Botanical extracts, Fragrances, Essential oils, Soap bases, Dry botanicals, Oleoresins, etc.</span>
 							</h4>
 								<a href="#" class="ca-more">more...</a>
 						</div>
@@ -54,10 +54,10 @@
 					<div class="ca-item ca-item-2">
 						<div class="ca-item-main">
 							<div class="ca-icon"></div>
-							<h3>Respect Life &amp; Rights</h3>
+							<h3>Food</h3>
 							<h4>
 								<span class="ca-quote">&ldquo;</span>
-								<span>I hold that the more helpless a creature, the more entitled it is to protection by man from the cruelty of man.</span>
+								<span>Commodities, Flavors, Natural colors, Sweeteners, Hydrocolloids, Preservatives, Food grade lubricants, etc.</span>
 							</h4>
 								<a href="#" class="ca-more">more...</a>
 						</div>
@@ -163,93 +163,9 @@
 							</div>
 						</div>
 					</div>
-					<div class="ca-item ca-item-6">
-						<div class="ca-item-main">
-							<div class="ca-icon"></div>
-							<h3>Don't believe the lies</h3>
-							<h4>
-								<span class="ca-quote">&ldquo;</span>
-								<span>An error does not become truth by reason of multiplied propagation, nor does truth become error because nobody sees it.</span>
-							</h4>
-								<a href="#" class="ca-more">more...</a>
-						</div>
-						<div class="ca-content-wrapper">
-							<div class="ca-content">
-								<h6>How essential is meat?</h6>
-								<a href="#" class="ca-close">close</a>
-								<div class="ca-content-text">
-									<p>I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now.</p>
-									<p>When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary, I throw myself down among the tall grass by the trickling stream;</p>
-									<p>She packed her seven versalia, put her initial into the belt and made herself on the way.</p>
-								</div>
-								<ul>
-									<li><a href="#">Read more</a></li>
-									<li><a href="#">Share this</a></li>
-									<li><a href="#">Become a member</a></li>
-									<li><a href="#">Donate</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="ca-item ca-item-7">
-						<div class="ca-item-main">
-							<div class="ca-icon"></div>
-							<h3>Save the planet</h3>
-							<h4>
-								<span class="ca-quote">&ldquo;</span>
-								<span>A small body of determined spirits fired by an unquenchable faith in their mission can alter the course of history.</span>
-							</h4>
-								<a href="#" class="ca-more">more...</a>
-						</div>
-						<div class="ca-content-wrapper">
-							<div class="ca-content">
-								<h6>Collateral damage?</h6>
-								<a href="#" class="ca-close">close</a>
-								<div class="ca-content-text">
-									<p>I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now.</p>
-									<p>When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary, I throw myself down among the tall grass by the trickling stream;</p>
-									<p>She packed her seven versalia, put her initial into the belt and made herself on the way.</p>
-								</div>
-								<ul>
-									<li><a href="#">Read more</a></li>
-									<li><a href="#">Share this</a></li>
-									<li><a href="#">Become a member</a></li>
-									<li><a href="#">Donate</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="ca-item ca-item-8">
-						<div class="ca-item-main">
-							<div class="ca-icon"></div>
-							<h3>It's time to move on</h3>
-							<h4>
-								<span class="ca-quote">&ldquo;</span>
-								<span>A nation's culture resides in the hearts and in the soul of its people.</span>
-							</h4>
-								<a href="#" class="ca-more">more...</a>
-						</div>
-						<div class="ca-content-wrapper">
-							<div class="ca-content">
-								<h6>Let's finally become humans</h6>
-								<a href="#" class="ca-close">close</a>
-								<div class="ca-content-text">
-									<p>I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now.</p>
-									<p>When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary, I throw myself down among the tall grass by the trickling stream;</p>
-									<p>She packed her seven versalia, put her initial into the belt and made herself on the way.</p>
-								</div>
-								<ul>
-									<li><a href="#">Read more</a></li>
-									<li><a href="#">Share this</a></li>
-									<li><a href="#">Become a member</a></li>
-									<li><a href="#">Donate</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
-			<h5>Quotes by Mohandas Gandhi</h5>
+			<h5>Site mockup by Mark and Yvonne Martinez</h5>
 		</div>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 		<script type="text/javascript" src="<@spring.url '/libs/CircularContentCarousel/js/jquery.easing.1.3.js' />"></script>
