@@ -15,16 +15,15 @@
 <body>
 
   <@navbar.navbar />
+  
+  <div id="wrap">
+  <div class="clearfix"></div>
+  
+  <div class="btn">CONTACT US LOL!</div>
+  <div>RANDOM STUFF</div>
 
-  <div id="footer">
-    <div class="container">
-      Footer lol
-
-      <div class="pull-right">
-        <div class="btn">Wat</div>
-      </div>
-    </div>
-  </div>
+  <@navbar.footer />
+  
 </body>
 
 </html>

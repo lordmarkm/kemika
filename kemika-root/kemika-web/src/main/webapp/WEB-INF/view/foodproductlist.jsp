@@ -13,16 +13,22 @@
 </head>
 
 <body>
+  <div id="wrap">
   <@navbar.navbar />
-  <div id="footer">
-    <div class="container">
-      Footer lol
-
-      <div class="pull-right">
-        <div class="btn">Wat</div>
+  <div class="clearfix"></div>
+  
+  <div class="container">
+      <div class="row">
+          <div class="span3">
+              Random Food stuffs
+          </div>
+           <div class="span3">
+              Random Food stuffs again
+          </div>
       </div>
-    </div>
   </div>
+  </div>
+  <@navbar.footer />
 </body>
 
 </html>

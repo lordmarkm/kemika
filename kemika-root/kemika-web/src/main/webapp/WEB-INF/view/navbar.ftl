@@ -1,6 +1,4 @@
 <#macro navbar>
-  <div id="wrap">
-
     <div id="VMmodal" class="modal hide fade">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -92,8 +90,16 @@
         <input type="text" class="search-query" placeholder="Search">
       </form>
     </div>
+  </#macro>
+  
+  <#macro footer>
+   <div id="footer">
+    <div class="container">
+      Footer lol
 
-    <div style="height: 1000px;"></div>
-    <div id="push"></div>
+      <div class="pull-right">
+        <div class="btn">Wat</div>
+      </div>
+    </div>
   </div>
   </#macro>
