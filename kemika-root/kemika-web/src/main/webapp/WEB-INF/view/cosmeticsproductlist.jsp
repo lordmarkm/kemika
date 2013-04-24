@@ -19,11 +19,36 @@
   
   <div class="clearfix"></div>
   
-  <div class="container">        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Links and Stuff</a>
-          <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-            <li><a tabindex="-1" href="http://www.helenachemical.com/Pages/home.aspx">Helena</a></li>
-            <li><a tabindex="-1" href="http://www.eastman.com/Pages/Home.aspx">Eastman</a></li>
-          </ul></li>
+  <table id="tables" border=1 cellpadding=2>
+  	<tr bgcolor="CDBDEF">
+  		<td colspan=2 class="text-center">Cosmetic Products</td>
+  	</tr>
+  	<tr>
+  		<td rowspan=6>Product Types:</td>
+  		<td>Botanical Extracts</td>
+  	</tr>
+  	<tr>
+  		<td>Fragrances</td>
+  	</tr>
+  	  	<tr>
+  		<td>Essential Oils</td>
+  	</tr>
+  	</tr>
+  	  	<tr>
+  		<td>Soap Bases</td>
+  	</tr>
+  	</tr>
+  	  	<tr>
+  		<td>Dry Botanicals</td>
+  	</tr>  	
+  	</tr>
+  	  	<tr>
+  		<td>Oleoresins</td>
+  	</tr>
+  </table>
+  
+  <!-- 
+  <div class="container">Dry Botanicals
       <div class="row">
           <div class="span1">
               Cosmetic Products:
@@ -41,6 +66,7 @@
       </div>
   </div>
   </div>
+   -->
   
   <@navbar.footer />
   

@@ -9,6 +9,12 @@ html,body {
   margin: 0 auto -60px;
 }
 
+#tables {
+  background-color:#EEEFEF;
+  position:absolute;
+  left:30px;
+}
+
 #push, #footer {
   height: 60px;
 }
