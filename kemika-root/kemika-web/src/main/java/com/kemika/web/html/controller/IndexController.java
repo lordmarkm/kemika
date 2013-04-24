@@ -12,7 +12,4 @@ public interface IndexController {
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView index();
 	
-	@RequestMapping(value = "/experiment", method = RequestMethod.GET)
-	public ModelAndView experiment();
-	
 }
