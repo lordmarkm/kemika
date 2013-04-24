@@ -9,7 +9,7 @@ import com.kemika.web.html.controller.IndexController;
 public class IndexControllerImpl implements IndexController {
 
 	public ModelAndView index() {
-		return new ModelAndView("index");
+		return new ModelAndView("splash");
 	}
 
 	public ModelAndView experiment() {

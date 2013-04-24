@@ -8,40 +8,92 @@
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
 <link href="<@spring.url '/css/default.css' />" rel="stylesheet">
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 
 <!-- 
 <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
  -->
  
-<script src="<@spring.url '/javascript/cloud-carousel/cloud-carousel.1.0.5.min.js' />"></script>
+<!-- CircularContentCarousel includes -->
+<script type="text/javascript" src="<@spring.url '/javascript/CircularContentCarousel/js/jquery.easing.1.3.js' />"></script>
+<script type="text/javascript" src="<@spring.url '/javascript/CircularContentCarousel/js/jquery.mousewheel.js' />"></script>
+<script type="text/javascript" src="<@spring.url '/javascript/CircularContentCarousel/js/jquery.contentcarousel.js' />"></script>
 
 </head>
 
 <body>
 
-  <div style="width: 600px; height: 300px;">
-    <div id="carousel">
-      <img class="cloudcarousel" src="<@spring.url '/images/splash-carousel/cosmetics.png' />" alt="Cosmetics" title="Cosmetics" />
-      <img class="cloudcarousel" src="<@spring.url '/images/splash-carousel/food.png' />" alt="Food" title="Food" />
-      <img class="cloudcarousel" src="<@spring.url '/images/splash-carousel/industrial.png' />" alt="Industrial" title="Industrial" />
-      <img class="cloudcarousel" src="<@spring.url '/images/splash-carousel/pharma.png' />" alt="Pharmaceutical" title="Pharmaceutical" />
-      <img class="cloudcarousel" src="<@spring.url '/images/splash-carousel/veterinary.png' />" alt="Veterinary" title="Veterinary" />
-    </div>
-  </div>
-  <p id="carousel-title-text"></p>
-  <p id="carousel-alt-text"></p>
+<div id="ca-container" class="ca-container">
+    <div class="ca-wrapper">
+        <div class="ca-item ca-item-1">
+            <div class="ca-item-main">
+                <div class="ca-icon"></div>
+                <h3>Stop factory farming</h3>
+                <h4>
+                    <span class="ca-quote">“</span>
+                    <span>Some text...</span>
+                </h4>
+                    <a href="#" class="ca-more">more...</a>
+            </div>
+            <div class="ca-content-wrapper">
+                <div class="ca-content">
+                    <h6>Animals are not commodities</h6>
+                    <a href="#" class="ca-close">close</a>
+                    <div class="ca-content-text">
+                        <p>Some more text...</p>
+                    </div>
+                    <ul>
+                        <li><a href="#">Read more</a></li>
+                        <li><a href="#">Share this</a></li>
+                        <li><a href="#">Become a member</a></li>
+                        <li><a href="#">Donate</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="ca-item ca-item-2">
+         	<div class="ca-item-main">
+                <div class="ca-icon"></div>
+                <h3>Continue factory farming lol</h3>
+                <h4>
+                    <span class="ca-quote">“</span>
+                    <span>Some text...</span>
+                </h4>
+                    <a href="#" class="ca-more">more...</a>
+            </div>
+            <div class="ca-content-wrapper">
+                <div class="ca-content">
+                    <h6>Animals are commodities</h6>
+                    <a href="#" class="ca-close">close</a>
+                    <div class="ca-content-text">
+                        <p>Some more text...</p>
+                    </div>
+                    <ul>
+                        <li><a href="#">Read more</a></li>
+                        <li><a href="#">Share this</a></li>
+                        <li><a href="#">Become a member</a></li>
+                        <li><a href="#">Donate</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div><!-- ca-wrapper -->
+</div><!-- ca-container -->
 
 </body>
 
 <script>
-$(function(){
-	$('#carousel').CloudCarousel({
-		xPos: 128,
-		yPos: 32,
-		altBox: $('#carousel-alt-text'),
-		titleBox: $('#carousel-title-text')
-	});
+$('#ca-container').contentcarousel({
+    // speed for the sliding animation
+    sliderSpeed     : 500,
+    // easing for the sliding animation
+    sliderEasing    : 'easeOutExpo',
+    // speed for the item animation (open / close)
+    itemSpeed       : 500,
+    // easing for the item animation (open / close)
+    itemEasing      : 'easeOutExpo',
+    // number of items to scroll at a time
+    scroll          : 1
 });
 </script>
 
