@@ -13,12 +13,7 @@
 </head>
 
 <body>
-  
   <@navbar.navbar />
-
-    <div style="height: 1000px;"></div>
-    <div id="push"></div>
-  </div>
   <div id="footer">
     <div class="container">
       Footer lol

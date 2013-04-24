@@ -12,8 +12,4 @@ public class IndexControllerImpl implements IndexController {
 		return new ModelAndView("index");
 	}
 
-	public ModelAndView experiment() {
-		return new ModelAndView("experiment");
-	}
-
 }
