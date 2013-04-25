@@ -83,6 +83,7 @@
             <li><a tabindex="-1" href="/cosmeticsproductlist" role="button" data-toggle="modal">Cosmetics</a></li>
             <li><a tabindex="-1" href="#Minemodal" role="button" data-toggle="modal">Mining</a></li>
           </ul></li>
+        <li><a href="<@spring.url '/clients' />" >Clients</a></li>
         <li><a href="/contactus" role="button" data-toggle="modal">Contact Us</a></li>
       </ul>
 
