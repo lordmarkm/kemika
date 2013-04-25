@@ -1,4 +1,5 @@
 <#import "/spring.ftl" as spring />
+<#import "./navbar.ftl" as navbar />
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +20,9 @@
 		<link href='http://fonts.googleapis.com/css?family=Rochester' rel='stylesheet' type='text/css' />
     </head>
     <body>
+    	<@navbar.navbar />
+    	<div class="clearfix"></div>
+    	
 		<div class="container">
 			<h1>Welcome to Kemika Internationale</h1>
 			<div id="ca-container" class="ca-container">

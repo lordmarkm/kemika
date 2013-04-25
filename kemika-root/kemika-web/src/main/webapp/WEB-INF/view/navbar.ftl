@@ -1,4 +1,8 @@
 <#macro navbar>
+	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+
     <div id="VMmodal" class="modal hide fade">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -65,7 +69,7 @@
 
     <div class="navbar pull-right">
       <ul class="nav">
-        <li><a href="/experiment" role="button">Kemika Home</a></li>
+        <li><a href="<@spring.url '/' />" role="button">Kemika Home</a></li>
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">About Kemika</a>
           <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
             <li><a tabindex="-1" href="#Histomodal" role="button" data-toggle="modal">History</a></li>
