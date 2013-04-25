@@ -72,7 +72,7 @@
             <li><a tabindex="-1" href="#VMmodal" role="button" data-toggle="modal">Vision and Mission</a></li>
             <li><a tabindex="-1" href="#CVmodal" role="button" data-toggle="modal">Core Values</a></li>
           </ul></li>
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Product Lists</a>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Product Line</a>
           <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
             <li><a tabindex="-1" href="/foodproductlist" role="button" data-toggle="modal">Food</a></li>
             <li><a tabindex="-1" href="/cosmeticsproductlist" role="button" data-toggle="modal">Cosmetics</a></li>
