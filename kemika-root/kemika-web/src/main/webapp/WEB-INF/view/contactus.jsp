@@ -1,5 +1,6 @@
 <#import "/spring.ftl" as spring />
-<#import "./navbar.ftl" as navbar />
+<#import "./templates/navbar.ftl" as navbar />
+<#import "./templates/footer.ftl" as footer />
 
 <!DOCTYPE html>
 <html>
@@ -49,8 +50,6 @@
           </div>
       </div>
   </div>
-
-  <@navbar.footer />
   
 </body>
 

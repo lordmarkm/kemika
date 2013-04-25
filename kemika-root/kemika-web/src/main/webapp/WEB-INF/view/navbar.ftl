@@ -44,7 +44,9 @@
               established procedures and are subject to audit and disclosure.</p>
             </div>
             <div class="tab-pane" id="value4">
-              <p>fourth value stuff</p>
+              <p>We improve our performance by havig a systematic approach to quality, safety, and environmental 
+              management. We continuously look for ways to reduce the environmental impact of our operations; 
+              improve the quality of our products and services; and ensure the safety of our people.</p>
             </div>
           </div>
         </div>
@@ -78,7 +80,7 @@
           <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
             <li><a tabindex="-1" href="/foodproductlist" role="button" data-toggle="modal">Food</a></li>
             <li><a tabindex="-1" href="/cosmeticsproductlist" role="button" data-toggle="modal">Cosmetics</a></li>
-            <li><a tabindex="-1" href="#Minemodal" role="button" data-toggle="modal">Mining</a></li>
+            <li><a tabindex="-1" href="/veterinaryproductlist" role="button" data-toggle="modal">Veterinary</a></li>
           </ul></li>
         <li><a href="<@spring.url '/clients' />" >Clients</a></li>
         <li><a href="/contactus" role="button" data-toggle="modal">Contact Us</a></li>
@@ -88,16 +90,4 @@
         <input type="text" class="search-query" placeholder="Search">
       </form>
     </div>
-  </#macro>
-  
-  <#macro footer>
-   <div id="footer">
-    <div class="container">
-      Footer lol
-
-      <div class="pull-right">
-        <div class="btn">Wat</div>
-      </div>
-    </div>
-  </div>
   </#macro>
