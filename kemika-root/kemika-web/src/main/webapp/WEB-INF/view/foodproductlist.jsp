@@ -14,9 +14,9 @@
 
 <body>
 
-  <div id="wrap">
   <@navbar.navbar />
   
+  <div id="wrap">
   <div class="clearfix"></div>
   
   <div class="container">

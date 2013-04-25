@@ -1,4 +1,5 @@
 <#macro navbar>
+	<link href="<@spring.url '/css/default.css' />" rel="stylesheet">
 	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
@@ -6,23 +7,11 @@
     <div id="VMmodal" class="modal hide fade">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h3>Vision and Mission</h3>
+        <h3>Vision</h3>
       </div>
       <div class="modal-body">
-        <div class="tabbable tabs-left">
-          <ul class="nav nav-tabs">
-            <li class="active"><a href="#vision" data-toggle="tab">Vision</a></li>
-            <li><a href="#mission" data-toggle="tab">Mission</a></li>
-          </ul>
-          <div class="tab-content">
-            <div class="tab-pane active" id="visio              	<li>Food Grade Lubricants</li>n">
-              <p>vision stuff here...</p>
-            </div>
-            <div class="tab-pane" id="mission">
-              <p>mission stuff here...</p>
-            </div>
-          </div>
-        </div>
+		<p>To become the most preferred distributor and retailer of chemicals in food, agricultural and industrial 
+		applications</p>
       </div>
     </div>
     
@@ -45,11 +34,15 @@
               for the better and surpass ordinary standards in all of the activities of our operation.</p>
             </div>
             <div class="tab-pane" id="value2">
-              <p>We commit to contribute to sustainable development.</p>
+              <p>We commit to contribute to sustainable development. This requires balancing short and long-term 
+              interests, intergrating economic, environmental and social considerations into the company's 
+              direction.</p>
             </div>
             <div class="tab-pane" id="value3">
-              <p>third value stuff</p>
-            </div>pull-right
+              <p>We insist on intergrity and fairness in all aspects of our business. All business transactions 
+              must be reflected accurately and fairly in the accounts of the company in accordance with 
+              established procedures and are subject to audit and disclosure.</p>
+            </div>
             <div class="tab-pane" id="value4">
               <p>fourth value stuff</p>
             </div>
@@ -64,7 +57,11 @@
         <h3>History</h3>
       </div>
       <div class="modal-body">
-        <p>Once upon a time...</p>
+        <p>Kemika Internationale, Inc. traces its beginnings in 1997 when Stan Chem Philippines, Inc. was established 
+        as an affiliate of a UK-based chemical trading company. Over the years the company has grown and been 
+        recognized in the industry as a dependable supplier of chemicals. In order to cater to market demands of 
+        food, pharmaceutical, veterinary, and cosmetics industries, Stan Chem Philippines, Inc. gave birth to 
+        Kemika Internationale, Inc.</p>
       </div>
     </div>
 
@@ -74,7 +71,7 @@
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">About Kemika</a>
           <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
             <li><a tabindex="-1" href="#Histomodal" role="button" data-toggle="modal">History</a></li>
-            <li><a tabindex="-1" href="#VMmodal" role="button" data-toggle="modal">Vision and Mission</a></li>
+            <li><a tabindex="-1" href="#VMmodal" role="button" data-toggle="modal">Vision</a></li>
             <li><a tabindex="-1" href="#CVmodal" role="button" data-toggle="modal">Core Values</a></li>
           </ul></li>
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Product Line</a>
