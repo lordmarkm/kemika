@@ -9,6 +9,10 @@ html,body {
   margin: 0 auto -60px;
 }
 
+#contact {
+  font-siz: 14px;
+}
+
 #tables {
   background-color:#EEEFEF;
   position:absolute;

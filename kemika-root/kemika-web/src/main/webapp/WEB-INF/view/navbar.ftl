@@ -34,17 +34,18 @@
       <div class="modal-body">
         <div class="tabbable tabs-left">
           <ul class="nav nav-tabs">
-            <li class="active"><a href="#value1" data-toggle="tab">Value 1</a></li>
-            <li><a href="#value2" data-toggle="tab">Value 2</a></li>
-            <li><a href="#value3" data-toggle="tab">Value 3</a></li>
-            <li><a href="#value4" data-toggle="tab">Value 4</a></li>
+            <li class="active"><a href="#value1" data-toggle="tab">Leadership</a></li>
+            <li><a href="#value2" data-toggle="tab">Sustainability</a></li>
+            <li><a href="#value3" data-toggle="tab">Transparency</a></li>
+            <li><a href="#value4" data-toggle="tab">Quality, Safety, and Environment</a></li>
           </ul>
           <div class="tab-content">
             <div class="tab-pane active" id="value1">
-              <p>something about the first value that I don't really remember. anyway... stuff here...</p>
+              <p>We are passionately driven to make a difference. We are committed to develop skills to change things
+              for the better and surpass ordinary standards in all of the activities of our operation.</p>
             </div>
             <div class="tab-pane" id="value2">
-              <p>second value stuff</p>
+              <p>We commit to contribute to sustainable development.</p>
             </div>
             <div class="tab-pane" id="value3">
               <p>third value stuff</p>
