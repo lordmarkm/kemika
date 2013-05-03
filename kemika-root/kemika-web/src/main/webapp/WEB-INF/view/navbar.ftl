@@ -78,9 +78,9 @@
           </ul></li>
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Product Line</a>
           <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-            <li><a tabindex="-1" href="/foodproductlist" role="button" data-toggle="modal">Food</a></li>
-            <li><a tabindex="-1" href="/cosmeticsproductlist" role="button" data-toggle="modal">Cosmetics</a></li>
-            <li><a tabindex="-1" href="/veterinaryproductlist" role="button" data-toggle="modal">Veterinary</a></li>
+            <li><a tabindex="-1" href="<@spring.url '/foodproductlist' />" role="button" data-toggle="modal">Food</a></li>
+            <li><a tabindex="-1" href="<@spring.url '/cosmeticsproductlist' />" role="button" data-toggle="modal">Cosmetics</a></li>
+            <li><a tabindex="-1" href="<@spring.url '/veterinaryproductlist' />" role="button" data-toggle="modal">Veterinary</a></li>
           </ul></li>
         <li><a href="<@spring.url '/clients' />" >Clients</a></li>
         <li><a href="/contactus" role="button" data-toggle="modal">Contact Us</a></li>
