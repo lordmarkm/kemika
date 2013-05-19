@@ -8,7 +8,12 @@ $(function(){
 		mouseout: function(){
 			$(this).find('.category-options').hide();
 		}
-	}, '.category-name')
+	}, '.category-name');
 	
+	$(document).on({
+		click: function(){
+			window.location.href = urls.uploadimg + $(this).attr('cat-id');
+		}
+	}, '.edit-img-container')
 	
 });

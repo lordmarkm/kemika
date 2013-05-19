@@ -2,16 +2,22 @@ html,body {
   height: 100%;
 }
 
+.pointer {cursor: pointer;}
 .inline-block {display: inline-block;}
 
-
+/* margin */
+.mt20 {margin-top: 20px;}
 
 /* padding */
 .pd2 {padding: 2px;}
 
 
 
-
+/* images */
+.kemika-thumb {
+	max-height: 100px;
+	max-width: 100px;
+}
 
 #wrap {
   min-height: 100%;

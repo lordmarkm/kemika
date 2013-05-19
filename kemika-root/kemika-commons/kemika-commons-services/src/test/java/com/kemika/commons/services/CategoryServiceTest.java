@@ -2,6 +2,7 @@ package com.kemika.commons.services;
 
 import static org.junit.Assert.*;
 
+import java.util.Arrays;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -14,6 +15,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.kemika.commons.models.Category;
+import com.kemika.commons.models.Image;
 import com.kemika.commons.models.Product;
 import com.kemika.commons.services.config.CommonsServicesConfig;
 
@@ -100,4 +102,30 @@ public class CategoryServiceTest {
 		assertEquals(2, saved.getProducts().size());
 	}
 	
+	@Test
+	public void testCascadeOnImage() {
+		
+		byte[] bytes = "Hello world".getBytes();
+		
+		Image i = new Image();
+		i.setImage(bytes);
+		
+		Category c = sari();
+		c.setImage(i);
+		
+		Long id = service.save(c).getId();
+		
+		Category savedCat = service.findOne(id);
+		assertNotNull(savedCat);
+		assertNotNull(savedCat.getImage());
+		assertTrue(Arrays.equals(bytes, savedCat.getImage().getImage()));
+		
+		byte[] saved = service.getImage(id);
+		
+		assertTrue(Arrays.equals(bytes, saved));
+		
+		assertTrue(service.getImages().size() == 1);
+		service.delete(savedCat);
+		assertTrue(service.getImages().size() == 0);
+	}
 }

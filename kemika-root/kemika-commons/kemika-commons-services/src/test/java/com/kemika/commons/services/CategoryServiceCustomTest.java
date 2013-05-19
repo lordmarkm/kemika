@@ -52,13 +52,13 @@ public class CategoryServiceCustomTest {
 		
 		Long sariId = service.save(sari()).getId();
 		
-		Category old = service.findById(sariId);
+		Category old = service.findOne(sariId);
 		assertEquals(sari.getName(), old.getName());
 		assertEquals(sari.getDescription(), old.getDescription());
 		
 		service.update(sariId, cars);
 		
-		Category updated = service.findById(sariId);
+		Category updated = service.findOne(sariId);
 		assertEquals(cars.getName(), updated.getName());
 		assertEquals(cars.getDescription(), updated.getDescription());
 	}

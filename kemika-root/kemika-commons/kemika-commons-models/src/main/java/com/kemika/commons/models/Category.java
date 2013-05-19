@@ -6,12 +6,16 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="category")
 public class Category extends AbstractEntity {
 
+	@OneToOne(cascade = CascadeType.ALL)
+	private Image image;
+	
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<Product> products;
 
@@ -24,6 +28,14 @@ public class Category extends AbstractEntity {
 
 	public void setProducts(List<Product> products) {
 		this.products = products;
+	}
+
+	public Image getImage() {
+		return image;
+	}
+
+	public void setImage(Image image) {
+		this.image = image;
 	}
 	
 	

@@ -7,6 +7,8 @@ import com.kemika.commons.models.Product;
 
 public class ProductForm {
 	
+	private Long id;
+	
 	@NotEmpty(message = "Product must have a name")
 	private String name;
 	
@@ -15,6 +17,17 @@ public class ProductForm {
 
 	@NotEmpty(message = "Product must have a category")
 	private String category;
+	
+	public ProductForm() {
+		//
+	}
+	
+	public ProductForm(Product product) {
+		this.id = product.getId();
+		this.name = product.getName();
+		this.description = product.getDescription();
+		this.category = product.getCategory().getName();
+	}
 	
 	public Product toProduct() {
 		Product product = new Product();
@@ -54,6 +67,14 @@ public class ProductForm {
 
 	public void setCategory(String category) {
 		this.category = category;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 	
 }

@@ -1,4 +1,4 @@
-package com.kemika.web.msgsource;
+package com.kemika.web.utils;
 
 import java.text.MessageFormat;
 import java.util.Locale;
@@ -19,6 +19,9 @@ public class DbMessageSource extends AbstractMessageSource {
 	@Override
 	protected MessageFormat resolveCode(String code, Locale locale) {
 		Message message = messages.findByKey(code);
+		if(null == message) {
+			return createMessageFormat("Message not found for code [" + code + "]", locale);
+		}
 		return createMessageFormat(message.getMessage(), locale);
 	}
 

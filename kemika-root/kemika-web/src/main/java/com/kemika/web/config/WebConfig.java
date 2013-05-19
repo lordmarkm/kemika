@@ -10,7 +10,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-import com.kemika.web.msgsource.DbMessageSource;
+import com.kemika.web.utils.DbMessageSource;
 
 @EnableWebMvc
 @Configuration

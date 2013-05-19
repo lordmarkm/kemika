@@ -28,10 +28,15 @@ public interface AdminController {
 	@RequestMapping(value = "/category/edit", method = RequestMethod.POST)
 	ModelAndView editCategory(CategoryForm form, BindingResult result);
 	
+	@RequestMapping(value = "/category/delete/{id}", method = RequestMethod.GET)
+	ModelAndView deleteCategory(Long id);
+	
 	@RequestMapping(value = "/newproductform", method = RequestMethod.GET)
 	ModelAndView newProduct();
 	
 	@RequestMapping(value = "/newproduct", method = RequestMethod.POST)
 	ModelAndView newProduct(ProductForm form, BindingResult result);
 	
+	@RequestMapping(value = "/product/edit/{id}", method = RequestMethod.GET)
+	ModelAndView editProduct(Long id);
 }

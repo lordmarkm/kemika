@@ -12,7 +12,6 @@ import com.kemika.commons.models.Category;
  */
 public interface CategoryService extends PagingAndSortingRepository<Category, Long>, CategoryServiceCustom {
 
-	Category findById(Long id);
 	Category findByName(String categoryName);
 	
 	@Query("select name from Category")

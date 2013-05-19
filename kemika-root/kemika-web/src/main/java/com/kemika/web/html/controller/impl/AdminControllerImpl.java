@@ -63,7 +63,7 @@ public class AdminControllerImpl implements AdminController {
 
 	@Override
 	public ModelAndView editCategory(@PathVariable Long id) {
-		Category cat = categories.findById(id);
+		Category cat = categories.findOne(id);
 		Validate.notNull(cat);
 
 		return new ModelAndView("editcategory")
@@ -83,6 +83,16 @@ public class AdminControllerImpl implements AdminController {
 
 		return new ModelAndView("redirect:/admin");
 	}
+	
+	@Override
+	public 	ModelAndView deleteCategory(@PathVariable Long id) {
+		Category cat = categories.findOne(id);
+		Validate.notNull(cat);
+		categories.delete(cat);
+		
+		return new ModelAndView("redirect:/admin");
+	}
+
 	
 	@Override
 	public ModelAndView newProduct() {
@@ -109,5 +119,15 @@ public class AdminControllerImpl implements AdminController {
 		
 		return new ModelAndView("redirect:/admin");
 	}
+	
+	@Override
+	public 	ModelAndView editProduct(@PathVariable Long id) {
+		Product product = products.findOne(id);
+		Validate.notNull(product);
+
+		return new ModelAndView("editproduct")
+			.addObject("form", new ProductForm(product));
+	}
+
 
 }
