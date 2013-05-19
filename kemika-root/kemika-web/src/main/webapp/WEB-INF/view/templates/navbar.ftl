@@ -1,9 +1,4 @@
 <#macro navbar>
-	<link href="<@spring.url '/css/default.css' />" rel="stylesheet">
-	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
-
     <div id="VMmodal" class="modal hide fade">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -90,4 +85,6 @@
         <input type="text" class="search-query" placeholder="Search">
       </form>
     </div>
+    
+    <div class="clearfix"></div>
   </#macro>

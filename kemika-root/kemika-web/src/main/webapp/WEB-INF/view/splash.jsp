@@ -1,9 +1,12 @@
 <#import "/spring.ftl" as spring />
 <#import "./navbar.ftl" as navbar />
+<#import "./templates/includes.ftl" as includes />
 
 <!DOCTYPE html>
 <html lang="en">
     <head>
+      <@includes.universals />
+    
         <title>Kemika Internationale</title>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
@@ -58,7 +61,7 @@
 					<div class="ca-item ca-item-2">
 						<div class="ca-item-main">
 							<div class="ca-icon"></div>
-							<h3>Food</h3>
+							<h3><@spring.message 'food' />Food</h3>
 							<h4>
 								<span class="ca-quote">&ldquo;</span>
 								<span>Commodities, Flavors, Natural colors, Sweeteners, Hydrocolloids, Preservatives, Food grade lubricants, etc.</span>

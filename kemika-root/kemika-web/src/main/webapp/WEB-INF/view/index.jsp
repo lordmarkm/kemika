@@ -1,24 +1,18 @@
 <#import "/spring.ftl" as spring />
+<#import "./templates/includes.ftl" as includes />
 
 <!DOCTYPE html>
 <html>
 
 <head>
+  <@includes.universals />
+   
+  <!-- CircularContentCarousel includes -->
+  <script type="text/javascript" src="<@spring.url '/javascript/CircularContentCarousel/js/jquery.easing.1.3.js' />"></script>
+  <script type="text/javascript" src="<@spring.url '/javascript/CircularContentCarousel/js/jquery.mousewheel.js' />"></script>
+  <script type="text/javascript" src="<@spring.url '/javascript/CircularContentCarousel/js/jquery.contentcarousel.js' />"></script>
 
-<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
-<link href="<@spring.url '/css/default.css' />" rel="stylesheet">
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-
-<!-- 
-<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
- -->
- 
-<!-- CircularContentCarousel includes -->
-<script type="text/javascript" src="<@spring.url '/javascript/CircularContentCarousel/js/jquery.easing.1.3.js' />"></script>
-<script type="text/javascript" src="<@spring.url '/javascript/CircularContentCarousel/js/jquery.mousewheel.js' />"></script>
-<script type="text/javascript" src="<@spring.url '/javascript/CircularContentCarousel/js/jquery.contentcarousel.js' />"></script>
-
+  <title>Kemika Internationale</title>
 </head>
 
 <body>
@@ -28,7 +22,7 @@
         <div class="ca-item ca-item-1">
             <div class="ca-item-main">
                 <div class="ca-icon"></div>
-                <h3>Stop factory farming</h3>
+                <h3><@spring.message 'hello.world' /> Stop factory farming</h3>
                 <h4>
                     <span class="ca-quote">“</span>
                     <span>Some text...</span>

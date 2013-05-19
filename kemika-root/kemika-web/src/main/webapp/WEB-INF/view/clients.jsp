@@ -1,15 +1,16 @@
 <#import "/spring.ftl" as spring />
 <#import "./templates/navbar.ftl" as navbar />
 <#import "./templates/footer.ftl" as footer />
+<#import "./templates/includes.ftl" as includes />
 
 <!DOCTYPE html>
 <html>
 
 <head>
-<title>Clients</title>
-<link rel="shortcut icon" href="<@spring.url '/images/favicon.ico' />"> 
-<link href="<@spring.url '/css/default.css' />" rel="stylesheet" />
-<link href="<@spring.url '/css/clients.css' />" rel="stylesheet" />
+  <@includes.universals />
+  <link href="<@spring.url '/css/clients.css' />" rel="stylesheet" />
+  
+  <title>Clients</title>
 </head>
 
 <body>

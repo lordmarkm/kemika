@@ -1,12 +1,17 @@
 <#import "/spring.ftl" as spring />
 <#import "./templates/navbar.ftl" as navbar />
 <#import "./templates/footer.ftl" as footer />
+<#import "./templates/includes.ftl" as includes />
 
 <!DOCTYPE html>
 <html>
 
 <head>
-<link href="<@spring.url '/css/default.css' />" rel="stylesheet">
+  <@includes.universals />
+  <link href="<@spring.url '/css/admin/admin.css' />" rel="stylesheet">
+  <script src="<@spring.url '/javascript/admin/admin.js' />" ></script>
+
+  <title>Contact Us</title>
 </head>
 
 <body>

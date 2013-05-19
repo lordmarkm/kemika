@@ -2,6 +2,17 @@ html,body {
   height: 100%;
 }
 
+.inline-block {display: inline-block;}
+
+
+
+/* padding */
+.pd2 {padding: 2px;}
+
+
+
+
+
 #wrap {
   min-height: 100%;
   height: auto !important;
@@ -28,4 +39,8 @@ html,body {
   width:100%;
   position:absolute;
   bottom:0;
+}
+
+ul.nobullets {
+  list-style-type: none;
 }
