@@ -13,7 +13,10 @@ public interface CategoryServiceCustom {
 	void update(Long id, Category category);
 
 	byte[] getImage(Long id);
-
+	
+	@Transactional
+	void saveImage(Long id, byte[] img);
+	
 	List<Image> getImages();
 
 }

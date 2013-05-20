@@ -33,7 +33,8 @@
         <#list categories as category>
         <div class="ca-item">
           <div class="ca-item-main">
-            <div class="ca-icon"></div>
+            <#assign catImgUrl><@spring.url '/image/category/${category.id }' /></#assign>
+            <div class="ca-icon" style="background-image: url('${catImgUrl}');"></div>
             <h3>${category.name }</h3>
             <h4>
               <span class="ca-quote">&ldquo;</span>

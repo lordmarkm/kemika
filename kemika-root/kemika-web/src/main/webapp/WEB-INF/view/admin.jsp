@@ -16,7 +16,7 @@
 
 <script>
   window.urls = {
-    uploadimg: "<@spring.url '/admin/uploadimg/' />"
+    uploadimg: "<@spring.url '/image/upload/' />"
   }
 </script>
 
@@ -37,7 +37,7 @@
     <#list categories as category>
     <tr>
       <td valign="top">
-        <div class="edit-img-container pointer" cat-id="${category.id }">
+        <div class="edit-img-container pointer" entity-type="category" cat-id="${category.id }">
           <img class="kemika-thumb mt20" src="<@spring.url '/image/category/${category.id}' />" />
         </div>
       </td>
