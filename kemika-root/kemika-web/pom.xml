@@ -112,7 +112,13 @@
     </dependency>
 
     <!-- TEST -->
-
+    <dependency>
+      <groupId>kemika-commons</groupId>
+      <artifactId>kemika-commons-test</artifactId>
+      <version>${project.version}</version>
+      <scope>test</scope>
+    </dependency>
+    
     <!-- PROVIDED -->
     <dependency>
       <groupId>javax.servlet</groupId>

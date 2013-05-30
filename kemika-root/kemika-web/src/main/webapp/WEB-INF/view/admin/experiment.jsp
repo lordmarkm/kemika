@@ -1,7 +1,7 @@
 <#import "/spring.ftl" as spring />
-<#import "./templates/navbar.ftl" as navbar />
-<#import "./templates/footer.ftl" as footer />
-<#import "./templates/includes.ftl" as includes />
+<#import "../templates/navbar.ftl" as navbar />
+<#import "../templates/footer.ftl" as footer />
+<#import "../templates/includes.ftl" as includes />
 
 <!DOCTYPE html>
 <html>

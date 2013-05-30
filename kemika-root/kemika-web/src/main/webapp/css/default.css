@@ -1,3 +1,6 @@
+@import url('../libs/CircularContentCarousel/css/style.css');
+@import url('../libs/CircularContentCarousel/css/demo.css');
+
 html,body {
   height: 100%;
 }

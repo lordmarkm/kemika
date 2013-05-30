@@ -48,8 +48,6 @@ public class MessageServiceTest {
 	
 	@Test
 	public void testFindAll() {
-		service.deleteAll();
-
 		Message msg = dummy();
 		service.save(msg);
 		
@@ -63,8 +61,6 @@ public class MessageServiceTest {
 	
 	@Test
 	public void testFindByKey() {
-		service.deleteAll();
-		
 		Message msg = dummy();
 		service.save(msg);
 		
@@ -73,4 +69,16 @@ public class MessageServiceTest {
 		assertEquals("Hello world!", msg1.getMessage());
 	}
 
+	@Test 
+	public void testUpdateByKey() {
+		Message m = dummy();
+		
+		Message saved = service.save(m);
+		assertEquals("Hello world!", saved.getMessage());
+		service.update(m.getKey(), "Goodbye, world!");
+		
+		Message updated = service.findByKey(m.getKey());
+		assertNotNull(updated);
+		assertEquals("Goodbye, world!", updated.getMessage());
+	}
 }

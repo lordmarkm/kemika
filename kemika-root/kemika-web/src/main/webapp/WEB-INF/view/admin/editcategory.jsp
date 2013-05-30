@@ -1,7 +1,7 @@
 <#import "/spring.ftl" as spring /> 
-<#import "./templates/navbar.ftl" as navbar /> 
-<#import "./templates/footer.ftl" as footer />
-<#import "./templates/includes.ftl" as includes />
+<#import "../templates/navbar.ftl" as navbar /> 
+<#import "../templates/footer.ftl" as footer />
+<#import "../templates/includes.ftl" as includes />
 
 <!DOCTYPE html>
 <html>
@@ -9,7 +9,7 @@
 <head>
   <@includes.universals />
   
-  <title>New Product</title>
+  <title>Edit ${form.name }</title>
 </head>
 
 <body>
@@ -19,11 +19,13 @@
   <div class="clearfix"></div>
 
   <div class="container">
-    <#assign action><@spring.url '/admin/newproduct' /></#assign>
+    <#assign action><@spring.url '/admin/category/edit' /></#assign>
     <form action="${action }" method="post">
       <@spring.bind "form" /> 
+      <@spring.formHiddenInput 'form.id' />
+      
       <fieldset>
-      <legend>Create a new Product</legend>
+      <legend>Edit ${form.name }</legend>
       <ul class="nobullets">
         
         <li>
@@ -34,16 +36,11 @@
           <label for="description">Description</label>
           <@spring.formTextarea 'form.description' /> 
         </li>
-        <li>
-          <label for="category">Category</label>
-          <@spring.bind "catnames" />
-          <@spring.formSingleSelect 'form.category', catnames />
-        </li>
         
         <li>
-          <button class="btn">Create Product</button>
+          <button class="btn">Update Category</button>
           <a class="btn" href="<@spring.url '/admin' />">Cancel</a>
-        </li>        
+        </li>
         
       </ul>
       </fieldset>

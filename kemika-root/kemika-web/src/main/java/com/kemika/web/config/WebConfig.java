@@ -1,5 +1,7 @@
 package com.kemika.web.config;
 
+import javax.annotation.Resource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
@@ -7,9 +9,11 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+import com.kemika.web.interceptor.NavbarInterceptor;
 import com.kemika.web.utils.DbMessageSource;
 
 @EnableWebMvc
@@ -18,8 +22,11 @@ import com.kemika.web.utils.DbMessageSource;
 @PropertySource("classpath:mvc.properties")
 public class WebConfig extends WebMvcConfigurerAdapter {
 
-	@Autowired 
+	@Autowired
 	private DbMessageSource messageSource;
+	
+	@Resource
+	private NavbarInterceptor navbarInterceptor;
 	
     @Bean
     public MessageSource messageSource() {
@@ -42,4 +49,12 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         registry.addResourceHandler("/images/**").addResourceLocations("/images/");
     }
     
+    /**
+     * Should be equivalent to 
+     * <mvc:interceptors>
+     */
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+    	registry.addInterceptor(navbarInterceptor);
+    }
 }

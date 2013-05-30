@@ -1,7 +1,7 @@
 <#import "/spring.ftl" as spring /> 
-<#import "./templates/navbar.ftl" as navbar /> 
-<#import "./templates/footer.ftl" as footer />
-<#import "./templates/includes.ftl" as includes />
+<#import "../templates/navbar.ftl" as navbar /> 
+<#import "../templates/footer.ftl" as footer />
+<#import "../templates/includes.ftl" as includes />
 
 <!DOCTYPE html>
 <html>
@@ -9,7 +9,7 @@
 <head>
   <@includes.universals />
   
-  <title>Edit ${form.name }</title>
+  <title>New Category</title>
 </head>
 
 <body>
@@ -19,13 +19,12 @@
   <div class="clearfix"></div>
 
   <div class="container">
-    <#assign action><@spring.url '/admin/category/edit' /></#assign>
+    <#assign action><@spring.url '/admin/newcategory' /></#assign>
     <form action="${action }" method="post">
       <@spring.bind "form" /> 
-      <@spring.formHiddenInput 'form.id' />
       
       <fieldset>
-      <legend>Edit ${form.name }</legend>
+      <legend>Create a new Category</legend>
       <ul class="nobullets">
         
         <li>
@@ -38,7 +37,7 @@
         </li>
         
         <li>
-          <button class="btn">Update Category</button>
+          <button class="btn">Create Category</button>
           <a class="btn" href="<@spring.url '/admin' />">Cancel</a>
         </li>
         

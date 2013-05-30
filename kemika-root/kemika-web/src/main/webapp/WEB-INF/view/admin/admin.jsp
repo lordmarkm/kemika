@@ -1,7 +1,7 @@
 <#import "/spring.ftl" as spring />
-<#import "./templates/navbar.ftl" as navbar />
-<#import "./templates/includes.ftl" as includes />
-<#import "./templates/footer.ftl" as footer />
+<#import "../templates/navbar.ftl" as navbar />
+<#import "../templates/includes.ftl" as includes />
+<#import "../templates/footer.ftl" as footer />
 
 <!DOCTYPE html>
 <html>
@@ -31,6 +31,7 @@
   <ul>
     <li><a href="<@spring.url '/admin/newcategoryform' />" >Add category</a></li> 
     <li><a href="<@spring.url '/admin/newproductform' />" >Add product</a></li>
+    <li><a href="<@spring.url '/admin/messages' />" >Manage messages</a>
   </ul>
   
   <table>

@@ -5,7 +5,6 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.validation.Valid;
 
-import org.apache.commons.lang.Validate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -36,14 +35,16 @@ public class AdminControllerImpl implements AdminController {
 	@Override
 	public ModelAndView dashboard() {
 		
-		return new ModelAndView("admin")
+		return new ModelAndView("admin/admin")
+		
+			//distinct from NavbarInterceptor's "navcats" because of products fetch
 			.addObject("categories", categories.findAllWithProducts());
 		
 	}
 
 	@Override
 	public ModelAndView newCategory() {
-		return new ModelAndView("newcategory")
+		return new ModelAndView("admin/newcategory")
 			.addObject("form", new CategoryForm());
 	}
 
@@ -51,7 +52,7 @@ public class AdminControllerImpl implements AdminController {
 	public ModelAndView newCategory(@ModelAttribute @Valid CategoryForm form, BindingResult result) {
 		
 		if(result.hasErrors()) {
-			return new ModelAndView("newcategory")
+			return new ModelAndView("admin/newcategory")
 				.addObject("form", form);
 		}
 		
@@ -64,9 +65,8 @@ public class AdminControllerImpl implements AdminController {
 	@Override
 	public ModelAndView editCategory(@PathVariable Long id) {
 		Category cat = categories.findOne(id);
-		Validate.notNull(cat);
 
-		return new ModelAndView("editcategory")
+		return new ModelAndView("admin/editcategory")
 			.addObject("form", new CategoryForm(cat));
 	}
 
@@ -74,10 +74,9 @@ public class AdminControllerImpl implements AdminController {
 	public ModelAndView editCategory(@Valid @ModelAttribute CategoryForm form, BindingResult result) {
 		
 		if(result.hasErrors()) {
-			return new ModelAndView("editcategory")
+			return new ModelAndView("admin/editcategory")
 				.addObject("form", form);
 		}
-		Validate.notNull(form.getId());
 		
 		categories.update(form.getId(), form.toCategory());
 
@@ -87,7 +86,6 @@ public class AdminControllerImpl implements AdminController {
 	@Override
 	public 	ModelAndView deleteCategory(@PathVariable Long id) {
 		Category cat = categories.findOne(id);
-		Validate.notNull(cat);
 		categories.delete(cat);
 		
 		return new ModelAndView("redirect:/admin");
@@ -99,7 +97,7 @@ public class AdminControllerImpl implements AdminController {
 		
 		List<String> catnames = categories.getNames();
 		
-		return new ModelAndView("newproduct")
+		return new ModelAndView("admin/newproduct")
 			.addObject("catnames", catnames)
 			.addObject("form", new ProductForm());
 	}
@@ -108,7 +106,7 @@ public class AdminControllerImpl implements AdminController {
 	public ModelAndView newProduct(@ModelAttribute @Valid ProductForm form, BindingResult result) {
 		
 		if(result.hasErrors()) {
-			return new ModelAndView("newproduct")
+			return new ModelAndView("admin/newproduct")
 				.addObject("form", form)
 				.addObject("catnames", categories.getNames())
 				.addAllObjects(result.getModel());
@@ -123,9 +121,8 @@ public class AdminControllerImpl implements AdminController {
 	@Override
 	public 	ModelAndView editProduct(@PathVariable Long id) {
 		Product product = products.findOne(id);
-		Validate.notNull(product);
 
-		return new ModelAndView("editproduct")
+		return new ModelAndView("admin/editproduct")
 			.addObject("form", new ProductForm(product));
 	}
 
