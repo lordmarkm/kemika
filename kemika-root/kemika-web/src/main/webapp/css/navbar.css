@@ -1,0 +1,18 @@
+.navbar-container {
+	background-color: #04016f;
+	padding: 5px;
+	height: 40px;
+}
+
+li.dropdown.open a.navbar-main {
+	background-color: #36348C !important;
+}
+
+a.navbar-main {
+	color: white !important;
+	text-shadow: none !important;
+}
+a.navbar-main:hover {
+	color: #6699FF !important;
+}
+

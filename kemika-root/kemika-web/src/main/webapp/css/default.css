@@ -1,5 +1,6 @@
 @import url('../libs/CircularContentCarousel/css/style.css');
 @import url('../libs/CircularContentCarousel/css/demo.css');
+@import url('navbar.css');
 
 html,body {
   height: 100%;

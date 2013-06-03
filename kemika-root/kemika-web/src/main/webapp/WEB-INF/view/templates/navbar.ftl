@@ -50,31 +50,47 @@
   </div>
 </div>
 
-<div class="navbar pull-right">
-  <ul class="nav">
-    <li><a href="<@spring.url '/' />" role="button">Kemika Home</a></li>
-    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">About Kemika</a>
-      <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-        <li><a tabindex="-1" href="#modal-history" role="button" data-toggle="modal">History</a></li>
-        <li><a tabindex="-1" href="#modal-vision" role="button" data-toggle="modal">Vision</a></li>
-        <li><a tabindex="-1" href="#modal-values" role="button" data-toggle="modal">Core Values</a></li>
-      </ul>
-    </li>
-    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Product Line</a>
-      <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-        <#list navcats as category>
-          <li><a tavindex="-1" href="<@spring.url '/categories/${category.id}' />" role="button" data-toggle="modal">${category.name}</a></li>
-        </#list>
-      </ul>
-    </li>
-    <li><a href="<@spring.url '/clients' />" >Clients</a></li>
-    <li><a href="/contactus" role="button" data-toggle="modal">Contact Us</a></li>
-  </ul>
-
-  <form class="navbar-search">
-    <input type="text" class="search-query" placeholder="Search">
-  </form>
+<div class="container">
+	<div class="navbar-container span12">
+		<div class="pull-left">
+			<img src="<@spring.url '/images/navbar/logo_16per.png' />" />       
+		</div>
+		<div class="navbar pull-right">
+		  <ul class="nav">
+		    <li>
+		      <a class="navbar-main" href="<@spring.url '/' />" role="button">Kemika Home</a>
+		    </li>
+		    <li class="dropdown">
+		      <a class="navbar-main dropdown-toggle" data-toggle="dropdown" href="#">About Kemika</a>
+		      <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+		        <li><a tabindex="-1" href="#modal-history" role="button" data-toggle="modal">History</a></li>
+		        <li><a tabindex="-1" href="#modal-vision" role="button" data-toggle="modal">Vision</a></li>
+		        <li><a tabindex="-1" href="#modal-values" role="button" data-toggle="modal">Core Values</a></li>
+		      </ul>
+		    </li>
+		    <li class="dropdown">
+		      <a class="navbar-main dropdown-toggle" data-toggle="dropdown" href="#">Product Line</a>
+		      <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+		        <#list navcats as category>
+		          <li><a tavindex="-1" href="<@spring.url '/categories/${category.id}' />" role="button" data-toggle="modal">${category.name}</a></li>
+		        </#list>
+		      </ul>
+		    </li>
+		    <li>
+		      <a class="navbar-main" href="<@spring.url '/clients' />" >Clients</a>
+		    </li>
+		    
+		    <li>
+		      <a class="navbar-main" href="/contactus" role="button" data-toggle="modal">Contact Us</a>
+		    </li>
+		  </ul>
+		
+		  <form class="navbar-search">
+		    <input type="text" class="search-query" placeholder="Search">
+		  </form>
+		</div>
+	</div>
 </div>
-    
+
 <div class="clearfix"></div>
 </#macro>
