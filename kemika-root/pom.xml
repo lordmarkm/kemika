@@ -10,6 +10,7 @@
     <module>kemika-web</module>
     <module>kemika-db</module>
     <module>kemika-commons</module>
+    <module>kemika-security</module>
   </modules>
 
   <properties>
@@ -43,7 +44,17 @@
     <dependencies>
 
       <!-- PROJECT -->
-
+      <dependency>
+        <groupId>kemika-commons</groupId>
+        <artifactId>kemika-commons-models</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>kemika-commons</groupId>
+        <artifactId>kemika-commons-services</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      
       <!-- SPRING -->
       <dependency>
         <groupId>org.springframework</groupId>
