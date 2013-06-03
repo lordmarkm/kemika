@@ -1,0 +1,72 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>kemika-root</artifactId>
+    <groupId>kemika</groupId>
+    <version>1.0</version>
+    <relativePath>..</relativePath>
+  </parent>
+  <artifactId>kemika-security</artifactId>
+  <name>Kemika :: Security</name>
+
+  <!-- Additional repository for spring-security-javaconfig -->
+  <repositories>
+    <repository>
+      <id>spring-libs-snapshot</id>
+      <name>Spring Snapshot Repository</name>
+      <url>http://repo.springsource.org/snapshot</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+
+  <dependencies>
+    <!-- Project -->
+    <dependency>
+      <groupId>kemika-commons</groupId>
+      <artifactId>kemika-commons-models</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>kemika-commons</groupId>
+      <artifactId>kemika-commons-services</artifactId>
+    </dependency>
+
+    <!-- Spring Security + Javaconfig -->
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-javaconfig</artifactId>
+      <version>1.0.0.CI-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-expression</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <!-- TEST -->
+    <dependency>
+      <groupId>kemika-commons</groupId>
+      <artifactId>kemika-commons-test</artifactId>
+      <version>${project.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.hsqldb</groupId>
+      <artifactId>hsqldb</artifactId>
+      <version>2.2.8</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+      <version>2.5</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+</project>

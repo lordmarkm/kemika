@@ -134,4 +134,17 @@ public class CategoryServiceTest {
 		Category cat = service.create(sari());
 		assertEquals("sari-sari-store-products", cat.getUrlFragment());
 	}
+
+	@Test
+	public void testFindOneWithProducts() {
+		Category c = sari();
+		Product p = marlboro();
+		
+		c.getProducts().add(p);
+		Long id = service.save(c).getId();
+		
+		Category saved = service.findOneWithProducts(id);
+		assertNotNull(saved);
+		assertTrue(saved.getProducts().size() == 1);
+	}
 }

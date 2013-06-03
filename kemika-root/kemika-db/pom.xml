@@ -5,6 +5,5 @@
     <artifactId>kemika-root</artifactId>
     <version>1.0</version>
   </parent>
-  <groupId>kemika-db</groupId>
   <artifactId>kemika-db</artifactId>
 </project>

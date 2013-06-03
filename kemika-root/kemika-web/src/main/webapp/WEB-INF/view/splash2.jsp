@@ -21,7 +21,6 @@
   <@navbar.navbar />
       
   <div class="container">
-    <h1>Welcome to Kemika Internationale</h1>
     <div id="ca-container" class="ca-container">
       <div class="ca-wrapper">
       

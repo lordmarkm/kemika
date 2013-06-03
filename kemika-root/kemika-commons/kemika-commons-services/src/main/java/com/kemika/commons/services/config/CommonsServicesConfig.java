@@ -69,7 +69,7 @@ public class CommonsServicesConfig {
     public EntityManagerFactory entityManagerFactory() throws Exception {
         LocalContainerEntityManagerFactoryBean entityManagerFactory = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactory.setDataSource(dataSource());
-        entityManagerFactory.setPackagesToScan(new String[] { "com.kemika.commons.models" });
+        entityManagerFactory.setPackagesToScan(new String[] { "com.kemika.commons.models", "com.kemika.security.models" });
         entityManagerFactory.setPersistenceProvider(new HibernatePersistence());
         entityManagerFactory.setJpaProperties(hibernateProperties());
         entityManagerFactory.afterPropertiesSet();

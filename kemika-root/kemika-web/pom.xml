@@ -6,7 +6,7 @@
     <artifactId>kemika-root</artifactId>
     <version>1.0</version>
   </parent>
-  <groupId>kemika-web</groupId>
+  
   <artifactId>kemika-web</artifactId>
   <packaging>war</packaging>
   <name>Kemika :: Web</name>
@@ -24,6 +24,10 @@
           <groupId>org.slf4j</groupId>
         </exclusion>
       </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>kemika</groupId>
+      <artifactId>kemika-security</artifactId>
     </dependency>
 
     <!-- SPRING -->
