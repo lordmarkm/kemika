@@ -72,7 +72,7 @@
 		      <a class="navbar-main dropdown-toggle" data-toggle="dropdown" href="#">Product Line</a>
 		      <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
 		        <#list navcats as category>
-		          <li><a tavindex="-1" href="<@spring.url '/categories/${category.id}' />" role="button" data-toggle="modal">${category.name}</a></li>
+		          <li><a tavindex="-1" href="<@spring.url '/category/${category.id}' />" role="button" data-toggle="modal">${category.name}</a></li>
 		        </#list>
 		      </ul>
 		    </li>

@@ -7,8 +7,10 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="accounts")
+@Table(name=Account.TABLE_NAME)
 public class Account {
+
+	public static final String TABLE_NAME = "accounts";
 
 	@Id
 	@GeneratedValue

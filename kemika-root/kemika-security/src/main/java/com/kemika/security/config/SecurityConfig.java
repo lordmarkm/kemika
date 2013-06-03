@@ -15,6 +15,7 @@ import org.springframework.security.crypto.encrypt.TextEncryptor;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import com.kemika.security.models.Account;
 import com.kemika.security.support.Roles;
 
 @Configuration
@@ -67,7 +68,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		builder
 			.jdbcUserDetailsManager()
 			.dataSource(dataSource)
-			.usersByUsernameQuery("select username, password, true from Account where username = ?")
-			.authoritiesByUsernameQuery("select username, authorities from Account where username = ?");
+			.usersByUsernameQuery("select username, password, true from " + Account.TABLE_NAME + " where username = ?")
+			.authoritiesByUsernameQuery("select username, authorities from " + Account.TABLE_NAME + " where username = ?");
 	}
 }
