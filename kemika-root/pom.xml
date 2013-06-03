@@ -54,6 +54,11 @@
         <artifactId>kemika-commons-services</artifactId>
         <version>${project.version}</version>
       </dependency>
+      <dependency>
+        <groupId>kemika</groupId>
+        <artifactId>kemika-security</artifactId>
+        <version>${project.version}</version>
+      </dependency>
       
       <!-- SPRING -->
       <dependency>
