@@ -7,6 +7,6 @@ import com.kemika.commons.models.Product;
 public interface ProductServiceCustom {
 
 	@Transactional
-	void save(Product product, String categoryName);
+	Product create(Product product, String categoryName);
 
 }

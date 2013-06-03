@@ -15,6 +15,9 @@ public abstract class AbstractEntity {
 	@Column(name = "name", nullable = false)
 	private String name;
 	
+	@Column(name = "url_fragment")
+	private String urlFragment;
+	
 	@Column(name = "description", nullable = false)
 	private String description;
 
@@ -41,5 +44,14 @@ public abstract class AbstractEntity {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
+	public String getUrlFragment() {
+		return urlFragment;
+	}
+
+	public void setUrlFragment(String urlFragment) {
+		this.urlFragment = urlFragment;
+	}
+
 	
 }

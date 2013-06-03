@@ -51,7 +51,7 @@ public class ProductServiceCustomTest {
 	public void testSave() {
 		Product p = marlboro();
 		Category c = saveCat();
-		service.save(p, c.getName());
+		service.create(p, c.getName());
 		
 		Product saved = service.findByName(p.getName());
 		assertNotNull(saved);

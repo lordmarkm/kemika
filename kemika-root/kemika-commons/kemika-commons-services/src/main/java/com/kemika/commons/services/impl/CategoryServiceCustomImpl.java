@@ -6,16 +6,19 @@ import javax.annotation.Resource;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.apache.commons.lang.RandomStringUtils;
+
 import com.kemika.commons.models.Category;
 import com.kemika.commons.models.Image;
 import com.kemika.commons.services.CategoryService;
 import com.kemika.commons.services.CategoryServiceCustom;
 import com.kemika.commons.services.ImageService;
+import com.kemika.commons.utils.NameUtil;
 
 public class CategoryServiceCustomImpl implements CategoryServiceCustom {
 
 	@Resource
-	private CategoryService service;
+	private CategoryService cats;
 	
 	@Resource
 	private ImageService images;
@@ -23,9 +26,23 @@ public class CategoryServiceCustomImpl implements CategoryServiceCustom {
 	@PersistenceContext
 	private EntityManager em;
 	
+	private void setUrlFragment(Category category) {
+		String candidate = NameUtil.toUrlFragment(category.getName());
+		while(cats.findByUrlFragment(candidate) != null) {
+			candidate += RandomStringUtils.randomAlphabetic(1);
+		}
+		category.setUrlFragment(candidate);
+	}
+	
+	@Override
+	public Category create(Category category) {
+		setUrlFragment(category);
+		return cats.save(category);
+	}
+	
 	@Override
 	public void update(Long id, Category updated) {
-		Category old = service.findOne(id);
+		Category old = cats.findOne(id);
 		old.setName(updated.getName());
 		old.setDescription(updated.getDescription());
 	}
@@ -53,7 +70,7 @@ public class CategoryServiceCustomImpl implements CategoryServiceCustom {
 		Image newImg = new Image();
 		newImg.setImage(img);
 		
-		Category cat = service.findOne(id);
+		Category cat = cats.findOne(id);
 		if(null != cat.getImage()) {
 			//workaround for @OneToOne(orphanRemoval=true) not working properly when replacing
 			images.delete(cat.getImage()); 

@@ -8,7 +8,10 @@ import com.kemika.commons.models.Category;
 import com.kemika.commons.models.Image;
 
 public interface CategoryServiceCustom {
-
+	
+	@Transactional
+	Category create(Category category);
+	
 	@Transactional
 	void update(Long id, Category category);
 

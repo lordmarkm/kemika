@@ -10,5 +10,6 @@ import com.kemika.commons.models.Product;
 public interface ProductService extends PagingAndSortingRepository<Product, Long>, ProductServiceCustom {
 
 	Product findByName(String string);
+	Product findByUrlFragment(String urlFragment);
 
 }

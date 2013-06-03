@@ -62,4 +62,5 @@ public class CategoryServiceCustomTest {
 		assertEquals(cars.getName(), updated.getName());
 		assertEquals(cars.getDescription(), updated.getDescription());
 	}
+	
 }

@@ -128,4 +128,10 @@ public class CategoryServiceTest {
 		service.delete(savedCat);
 		assertTrue(service.getImages().size() == 0);
 	}
+	
+	@Test
+	public void testUrlFragment() {
+		Category cat = service.create(sari());
+		assertEquals("sari-sari-store-products", cat.getUrlFragment());
+	}
 }

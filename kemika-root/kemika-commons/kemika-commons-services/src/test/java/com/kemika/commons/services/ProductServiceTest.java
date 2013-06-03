@@ -12,8 +12,10 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.kemika.commons.models.Category;
 import com.kemika.commons.models.Product;
 import com.kemika.commons.services.config.CommonsServicesConfig;
+import com.kemika.commons.utils.NameUtil;
 
 /**
  * @author Mark
@@ -76,5 +78,20 @@ public class ProductServiceTest {
 		assertNotNull(service.findByName(p.getName()));
 		service.delete(p.getId());
 		assertTrue(service.findByName(p.getName()) == null);
+	}
+	
+	@Test
+	public void testUrlFragment() {
+		Category c = new Category();
+		c.setName("Cancer");
+		c.setDescription("Cancerous things");
+		cats.save(c);
+		
+		Product product = new Product();
+		product.setName(productName);
+		product.setDescription(productDesc);
+		
+		Product saved = service.create(product, "Cancer");
+		assertEquals(NameUtil.toUrlFragment(productName), saved.getUrlFragment());
 	}
 }

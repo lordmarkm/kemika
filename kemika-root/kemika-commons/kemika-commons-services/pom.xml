@@ -49,6 +49,12 @@
       <artifactId>logback-classic</artifactId>
     </dependency>
 
+    <!-- COMMONS -->
+    <dependency>
+      <groupId>commons-lang</groupId>
+      <artifactId>commons-lang</artifactId>
+    </dependency>
+
     <!-- TEST -->
     <dependency>
       <groupId>kemika-commons</groupId>
