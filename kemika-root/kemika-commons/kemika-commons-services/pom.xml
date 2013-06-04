@@ -7,7 +7,8 @@
     <version>1.0</version>
   </parent>
   <artifactId>kemika-commons-services</artifactId>
-
+  <name>Kemika :: Commons :: Services</name>
+  
   <dependencies>
 
     <!-- KEMIKA -->

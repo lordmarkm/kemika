@@ -1,4 +1,7 @@
 <#macro navbar>
+
+<#assign sec=JspTaglibs["http://www.springframework.org/security/tags"] />
+
 <div id="modal-vision" class="modal hide fade">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -51,44 +54,72 @@
 </div>
 
 <div class="container">
-	<div class="navbar-container span12">
-		<div class="pull-left">
-			<img src="<@spring.url '/images/navbar/logo_16per.png' />" />       
-		</div>
-		<div class="navbar pull-right">
-		  <ul class="nav">
-		    <li>
-		      <a class="navbar-main" href="<@spring.url '/' />" role="button">Kemika Home</a>
-		    </li>
-		    <li class="dropdown">
-		      <a class="navbar-main dropdown-toggle" data-toggle="dropdown" href="#">About Kemika</a>
-		      <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-		        <li><a tabindex="-1" href="#modal-history" role="button" data-toggle="modal">History</a></li>
-		        <li><a tabindex="-1" href="#modal-vision" role="button" data-toggle="modal">Vision</a></li>
-		        <li><a tabindex="-1" href="#modal-values" role="button" data-toggle="modal">Core Values</a></li>
-		      </ul>
-		    </li>
-		    <li class="dropdown">
-		      <a class="navbar-main dropdown-toggle" data-toggle="dropdown" href="#">Product Line</a>
-		      <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-		        <#list navcats as category>
-		          <li><a tavindex="-1" href="<@spring.url '/category/${category.id}' />" role="button" data-toggle="modal">${category.name}</a></li>
-		        </#list>
-		      </ul>
-		    </li>
-		    <li>
-		      <a class="navbar-main" href="<@spring.url '/clients' />" >Clients</a>
-		    </li>
-		    
-		    <li>
-		      <a class="navbar-main" href="/contactus" role="button" data-toggle="modal">Contact Us</a>
-		    </li>
-		  </ul>
-		
-		  <form class="navbar-search">
-		    <input type="text" class="search-query" placeholder="Search">
-		  </form>
-		</div>
+  <div class="span12 navbar-span">
+  	<div class="navbar-container">
+  		<div class="pull-left">
+  			<img src="<@spring.url '/images/navbar/logo_16per.png' />" />       
+  		</div>
+  		<div class="navbar pull-right">
+  		  <ul class="nav">
+  		    <li>
+  		      <a class="navbar-main" href="<@spring.url '/' />" role="button">Kemika Home</a>
+  		    </li>
+  		    <li class="dropdown">
+  		      <a class="navbar-main dropdown-toggle" data-toggle="dropdown" href="#">
+  		        About Kemika <span class="caret"></span>
+  		      </a>
+  		      <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+  		        <li><a tabindex="-1" href="#modal-history" role="button" data-toggle="modal">History</a></li>
+  		        <li><a tabindex="-1" href="#modal-vision" role="button" data-toggle="modal">Vision</a></li>
+  		        <li><a tabindex="-1" href="#modal-values" role="button" data-toggle="modal">Core Values</a></li>
+  		      </ul>
+  		    </li>
+  		    <li class="dropdown">
+  		      <a class="navbar-main dropdown-toggle" data-toggle="dropdown" href="#">
+  		        Product Line <span class="caret"></span>
+  		      </a>
+  		      <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+  		        <#list navcats as category>
+  		          <li><a tabindex="-1" href="<@spring.url '/category/${category.urlFragment}' />" role="button" data-toggle="modal">${category.name}</a></li>
+  		        </#list>
+  		      </ul>
+  		    </li>
+  		    <li>
+  		      <a class="navbar-main" href="<@spring.url '/clients' />" >Clients</a>
+  		    </li>
+  		    <li>
+  		      <a class="navbar-main" href="/contactus" role="button" data-toggle="modal">Contact Us</a>
+  		    </li>
+  		    
+  		    <@sec.authorize access="isAnonymous()">
+  		      <li>
+  		        <a class="navbar-main" href="/login">Login</a>
+  		      </li>
+  		    </@sec.authorize>
+  		    
+  		    <@sec.authorize access="isAuthenticated()">
+  		    <li class="dropdown">
+  		      <a class="navbar-main dropdown-toggle" data-toggle="dropdown" href="javascript:;">
+  		        <@sec.authentication property="principal.username" /> <span class="caret"></span>
+  		      </a>
+  		      <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+  		        <@sec.authorize access="hasRole('ROLE_ADMIN')">
+  		        <li><a href="<@spring.url '/admin' />">Admin Page</a></li>
+  		        </@sec.authorize>
+  		        <li><a href="<@spring.url '/account' />">Manage Account</a></li>
+  		        <li class="divider"></li>
+  		        <li><a href="<@spring.url '/logout' />">Logout</a></li>
+  		      </ul>
+  		    </li>
+  		    </@sec.authorize>
+  		    
+  		  </ul>
+  		
+  		  <form class="navbar-search">
+  		    <input type="text" class="search-query" placeholder="Search" />
+  		  </form>
+  		</div>
+  	</div>
 	</div>
 </div>
 

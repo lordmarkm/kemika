@@ -57,7 +57,7 @@ public class AdminControllerImpl implements AdminController {
 		}
 		
 		Category category = form.toCategory();
-		categories.save(category);
+		categories.create(category);
 		
 		return new ModelAndView("redirect:/admin");
 	}
@@ -113,7 +113,7 @@ public class AdminControllerImpl implements AdminController {
 		}
 		
 		Product product = form.toProduct();
-		products.save(product, form.getCategory());
+		products.create(product, form.getCategory());
 		
 		return new ModelAndView("redirect:/admin");
 	}

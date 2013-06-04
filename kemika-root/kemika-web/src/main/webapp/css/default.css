@@ -6,9 +6,21 @@ html,body {
   height: 100%;
 }
 
+body {
+	overflow-y: scroll;
+}
+
+.span12 {
+	position: relative;
+}
+
+.content {
+	padding: 5px;
+}
+
 .pointer {cursor: pointer;}
 .inline-block {display: inline-block;}
-
+.center {text-align: center;}
 /* margin */
 .mt20 {margin-top: 20px;}
 
@@ -53,4 +65,25 @@ html,body {
 
 ul.nobullets {
   list-style-type: none;
+}
+
+.preview-products {
+	list-style-type: decimal;
+}
+.preview-products li {
+	margin-left: 40px;
+}
+
+.translucent-bg, .translucent-bg-white {
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  z-index: -9000;
+  opacity: 0.2;
+}
+
+.translucent-bg-white {
+	background-color: white;
 }

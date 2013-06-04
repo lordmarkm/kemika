@@ -16,39 +16,40 @@
 
 <body>
   <@navbar.navbar />
-  
-  <div class="clearfix"></div>
-  
   <div class="container">
-  <h1>Admin dashboard</h1>
-  
-  <ul>
-    <li><a href="<@spring.url '/admin/newcategoryform' />" >Add category</a></li> 
-    <li><a href="<@spring.url '/admin/newproductform' />" >Add product</a></li>
-    <li><a href="<@spring.url '/admin' />" >Manage products</a>
-  </ul>
-  
-  <a class="btn" href="<@spring.url '/admin/messages/add' />">Add Message</a>
-  <table id="messages-table" class="table table-hover">
-    <thead>
-      <th>Key</th>
-      <th>Description</th>
-      <th>Message</th>
-      <th>&nbsp;</th>
-    </thead>
-    <tbody>
-    <#list messages as message>
-    <tr>
-      <td>${message.key }</td>
-      <td>${message.description }</td>
-      <td class="message">${message.message }</td>
-      <td><a class="btn" href="<@spring.url '/admin/messages/edit/${message.id }' />">Edit</a></td>
-      <td><a class="btn" href="<@spring.url '/admin/messages/delete/${message.id }' />">Delete</a></td>
-    </tr>
-    </#list>
-    </tbody>
-  </table>
-  
+    <div class="span12">
+      <div class="content">
+        <h1>Admin dashboard</h1>
+        
+        <div class="btn-group">
+          <a class="btn" href="<@spring.url '/admin/messages/add' />">Add Message</a>
+          <a class="btn btn-success" href="<@spring.url '/admin' />" >Manage products</a>
+        </div>
+        
+        <h3>Messages</h3>
+        <table id="messages-table" class="table table-hover">
+          <thead>
+            <th>Key</th>
+            <th>Description</th>
+            <th>Message</th>
+            <th>&nbsp;</th>
+          </thead>
+          <tbody>
+          <#list messages as message>
+          <tr>
+            <td>${message.key }</td>
+            <td>${message.description }</td>
+            <td class="message">${message.message }</td>
+            <td><a class="btn" href="<@spring.url '/admin/messages/edit/${message.id }' />">Edit</a></td>
+            <td><a class="btn" href="<@spring.url '/admin/messages/delete/${message.id }' />">Delete</a></td>
+          </tr>
+          </#list>
+          </tbody>
+        </table>
+      </div>
+      <div class="translucent-bg-white">
+      </div>
+    </div>
   </div>
   
 </body>

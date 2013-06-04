@@ -17,7 +17,6 @@
     <dependency>
       <groupId>kemika-commons</groupId>
       <artifactId>kemika-commons-services</artifactId>
-      <version>${project.version}</version>
       <exclusions>
         <exclusion>
           <artifactId>slf4j-api</artifactId>

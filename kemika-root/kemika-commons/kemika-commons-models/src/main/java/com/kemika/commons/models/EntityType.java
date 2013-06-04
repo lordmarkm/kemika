@@ -1,6 +1,6 @@
 package com.kemika.commons.models;
 
-public enum EntityTypes {
+public enum EntityType {
 	category,
 	product
 }

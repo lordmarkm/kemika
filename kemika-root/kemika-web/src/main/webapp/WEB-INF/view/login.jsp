@@ -21,10 +21,10 @@
         <legend>Login</legend>
         <ul class="nobullets">
           <li>
-            <label>Username: <input type="text" name="j_username" value="${SPRING_SECURITY_LAST_USERNAME}" /></label>
+            <label>Username: <input type="text" name="username"  /></label>
           </li>
           <li>
-            <label>Password: <input type="password" name="j_password" /></label>
+            <label>Password: <input type="password" name="password" /></label>
           </li>
         </ul>
         </fieldset>

@@ -8,5 +8,6 @@ public interface ProductServiceCustom {
 
 	@Transactional
 	Product create(Product product, String categoryName);
+	byte[] getImage(Long id);
 
 }

@@ -23,7 +23,7 @@ public class BrowseControllerImpl implements BrowseController {
 	
 	@Override
 	public ModelAndView category(@PathVariable String id) {
-		Category category = cats.findOneWithProducts(Long.valueOf(id));
+		Category category = cats.findByUrlFragment(id);
 		ModelAndView mav = new ModelAndView("category")
 			.addObject("category", category);
 		return mav;
@@ -31,7 +31,7 @@ public class BrowseControllerImpl implements BrowseController {
 
 	@Override
 	public ModelAndView product(@PathVariable String id) {
-		Product product = products.findOne(Long.valueOf(id));
+		Product product = products.findByUrlFragment(id);
 		ModelAndView mav = new ModelAndView("product")
 			.addObject("product", product);
 		return mav;

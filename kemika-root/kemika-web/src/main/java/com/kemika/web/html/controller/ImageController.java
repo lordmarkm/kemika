@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.kemika.commons.models.EntityType;
 import com.kemika.web.dto.FileUploadForm;
 
 /**
@@ -18,8 +19,8 @@ import com.kemika.web.dto.FileUploadForm;
 @RequestMapping("/image")
 public interface ImageController {
 	
-	@RequestMapping("/category/{id}")
-	ResponseEntity<byte[]> category(Long id) throws IOException;
+	@RequestMapping("/{type}/{id}")
+	ResponseEntity<byte[]> category(EntityType type, Long id) throws IOException;
 
 	@RequestMapping(value = "/upload/{type}/{id}", method = RequestMethod.GET)
 	ModelAndView uploadImageForm(String type, Long id);

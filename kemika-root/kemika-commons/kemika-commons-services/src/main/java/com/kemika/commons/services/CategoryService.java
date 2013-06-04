@@ -24,6 +24,7 @@ public interface CategoryService extends PagingAndSortingRepository<Category, Lo
 	@Query("select c from Category c left join fetch c.products where c.id = :id")
 	Category findOneWithProducts(@Param("id") Long id);
 
-	Category findByUrlFragment(String urlFragment);
+	@Query("select c from Category c left join fetch c.products where c.urlFragment = :urlFragment")
+	Category findByUrlFragment(@Param("urlFragment") String urlFragment);
 
 }

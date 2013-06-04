@@ -18,8 +18,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.kemika.commons.models.EntityTypes;
+import com.kemika.commons.models.EntityType;
 import com.kemika.commons.services.CategoryService;
+import com.kemika.commons.services.ProductService;
 import com.kemika.web.dto.FileUploadForm;
 import com.kemika.web.html.controller.ImageController;
 import com.kemika.web.utils.NoImage;
@@ -33,14 +34,27 @@ public class ImageControllerImpl implements ImageController {
 	private CategoryService cats;
 	
 	@Resource
+	private ProductService products;
+	
+	@Resource
 	private NoImage nimg;
 	
 	@Override
-	public ResponseEntity<byte[]> category(@PathVariable Long id) throws IOException {
+	public ResponseEntity<byte[]> category(@PathVariable EntityType type, @PathVariable Long id) throws IOException {
 		final HttpHeaders headers = new HttpHeaders();
 	    headers.setContentType(MediaType.IMAGE_PNG);
 	    
-	    byte[] img = cats.getImage(id);
+	    byte[] img = null;
+	    
+	    switch(type) {
+	    case category:
+	    	img = cats.getImage(id);
+	    	break;
+	    case product:
+	    	img = products.getImage(id);
+	    	break;
+	    }
+	    
 	    if(null == img) {
 	    	img = nimg.get();
 	    }
@@ -77,7 +91,7 @@ public class ImageControllerImpl implements ImageController {
 		
 		log.info("Received upload request: {}", form);
 		
-		switch(EntityTypes.valueOf(type)) {
+		switch(EntityType.valueOf(type)) {
 		case category:
 			cats.saveImage(id, form.getFile().getBytes());
 			break;

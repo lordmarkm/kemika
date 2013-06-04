@@ -3,6 +3,9 @@
 	padding: 5px;
 	height: 40px;
 }
+.navbar-span {
+	height: 50px;
+}
 
 li.dropdown.open a.navbar-main {
 	background-color: #36348C !important;

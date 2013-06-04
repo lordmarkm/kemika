@@ -7,6 +7,7 @@
     <version>1.0</version>
   </parent>
   <artifactId>kemika-commons-models</artifactId>
+  <name>Kemika :: Commons :: Models</name>
 
   <dependencies>
     <!-- SPRING -->
