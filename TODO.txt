@@ -1,0 +1,1 @@
+Also use #tools.nl2br on messages and wherever they are used such as About Kemika, etc
