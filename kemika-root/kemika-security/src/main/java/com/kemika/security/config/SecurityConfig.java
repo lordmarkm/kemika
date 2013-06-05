@@ -1,9 +1,10 @@
 package com.kemika.security.config;
 
+import javax.annotation.Resource;
 import javax.sql.DataSource;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.AuthenticationRegistry;
 import org.springframework.security.config.annotation.web.EnableWebSecurity;
@@ -15,16 +16,20 @@ import org.springframework.security.crypto.encrypt.TextEncryptor;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import com.kemika.security.models.Account;
+import com.kemika.security.support.KemikaUserDetailsService;
 import com.kemika.security.support.Roles;
 
 @Configuration
 @EnableWebSecurity
+@ComponentScan("com.kemika.security")
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-	@Autowired
-    private DataSource dataSource;
+//	@Resource
+//    private DataSource dataSource;
 
+	@Resource
+	private KemikaUserDetailsService userDetailsService;
+	
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 		return NoOpPasswordEncoder.getInstance();
@@ -48,6 +53,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.authorizeUrls()
 				.antMatchers("/admin*").hasRole(Roles.ROLE_ADMIN)
 				.antMatchers("/admin/**").hasRole(Roles.ROLE_ADMIN)
+				.antMatchers("/account*").authenticated()
 				.antMatchers("/**").permitAll()
 				//.antMatchers("/favicon.ico","/css/**","/images/**","/javascript/**","/libs/**").permitAll()
 				.and()
@@ -65,10 +71,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	protected void registerAuthentication(AuthenticationRegistry builder) throws Exception {
-		builder
-			.jdbcUserDetailsManager()
-			.dataSource(dataSource)
-			.usersByUsernameQuery("select username, password, true from " + Account.TABLE_NAME + " where username = ?")
-			.authoritiesByUsernameQuery("select username, authorities from " + Account.TABLE_NAME + " where username = ?");
+		builder.userDetailsService(userDetailsService);
+//		builder
+//			.jdbcUserDetailsManager()
+//			.dataSource(dataSource)
+//			.usersByUsernameQuery("select username, password, true from " + Account.TABLE_NAME + " where username = ?")
+//			.authoritiesByUsernameQuery("select username, authorities from " + Account.TABLE_NAME + " where username = ?");
 	}
 }

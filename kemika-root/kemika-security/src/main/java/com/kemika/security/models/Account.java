@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.core.style.ToStringCreator;
+
 @Entity
 @Table(name=Account.TABLE_NAME)
 public class Account {
@@ -25,6 +27,16 @@ public class Account {
 	@Column
 	private String authorities;
 
+	@Override
+	public String toString() {
+		return new ToStringCreator(this)
+			.append("id", id)
+			.append("username", username)
+			.append("authorities", authorities)
+			.append("password", "[PROTECTED]")
+			.toString();
+	}
+	
 	public long getId() {
 		return id;
 	}

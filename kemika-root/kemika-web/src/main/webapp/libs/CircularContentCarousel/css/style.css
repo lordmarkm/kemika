@@ -128,12 +128,13 @@
 	height:440px;
 	top:5px;
 	text-align:left;
-	z-index:10000;
+	z-index:1000;
 	overflow:hidden;
 }
 .ca-content{
 	width:660px;
 	overflow:hidden;
+	height: 100%;
 }
 .ca-content-text{
 	font-size: 14px;
@@ -142,6 +143,8 @@
 	margin:10px 20px;
 	padding:10px 20px;
 	line-height:24px;
+	max-height: 70%;
+	overflow-y: auto;
 }
 .ca-content-text p{
 	padding-bottom:5px;

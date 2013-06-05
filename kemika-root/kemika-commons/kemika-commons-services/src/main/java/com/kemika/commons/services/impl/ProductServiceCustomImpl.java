@@ -29,7 +29,8 @@ public class ProductServiceCustomImpl implements ProductServiceCustom {
 	
 	private void setUrlFragment(Product product) {
 		String candidate = NameUtil.toUrlFragment(product.getName());
-		while(products.findByUrlFragment(candidate) != null) {
+		while(products.findByUrlFragment(candidate) != null
+				&& products.findByUrlFragment(candidate).getId() != product.getId()) {
 			candidate += RandomStringUtils.randomAlphabetic(1);
 		}
 		product.setUrlFragment(candidate);
@@ -53,6 +54,21 @@ public class ProductServiceCustomImpl implements ProductServiceCustom {
 				.getResultList();
 			
 			return img.size() == 0 ? null : img.get(0).getImage();
+	}
+
+	@Override
+	public void update(Long id, Product product) {
+		Product old = products.findOne(id);
+		old.setName(product.getName());
+		old.setDescription(product.getDescription());
+		setUrlFragment(old);
+	}
+
+	@Override
+	public void remove(Long id) {
+		Product prod = products.findOne(id);
+		prod.getCategory().getProducts().remove(prod);
+		products.delete(prod);
 	}
 	
 }

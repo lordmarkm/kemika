@@ -1,6 +1,7 @@
 <#import "/spring.ftl" as spring />
 <#import "./templates/navbar.ftl" as navbar />
 <#import "./templates/includes.ftl" as includes />
+<#import "./templates/tools.ftl" as tools />
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,15 +21,15 @@
           <h1>${category.name }</h1>
           
           <h3>Description</h3>
-          <p>${category.description }
+          <p><@tools.nl2br string=category.description />
           
           <#if category.products?has_content>
           <h3>Products</h3>
           <table class="table" title="Products">
             <#list category.products as product>
             <tr>
-              <td><strong><a href="<@spring.url '/product/${product.urlFragment }' />">${product.name }</strong></a></td>
-              <td>${product.description }</td>
+              <td class="w15"><strong><a href="<@spring.url '/product/${product.urlFragment }' />">${product.name }</strong></a></td>
+              <td><@tools.nl2br string=product.description /></td>
             </tr>
             </#list>
           </table>

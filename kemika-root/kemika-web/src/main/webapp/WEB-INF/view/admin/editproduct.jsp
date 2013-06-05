@@ -8,24 +8,20 @@
 
 <head>
   <@includes.universals />
-  
   <title>Edit ${form.name }</title>
 </head>
 
 <body>
-
   <@navbar.navbar />
-
-  <div class="clearfix"></div>
-
   <div class="container">
     <div class="span12">
       <div class="content span6">
-        <#assign action><@spring.url '/admin/category/edit' /></#assign>
+        <#assign action><@spring.url '/admin/product/edit' /></#assign>
         <form action="${action }" method="post">
-          <@spring.bind "form" /> 
+          <@spring.bind "form" />
           <@spring.formHiddenInput 'form.id' />
-          
+          <@spring.formHiddenInput 'form.category' />
+           
           <fieldset>
           <legend>Edit ${form.name }</legend>
           <ul class="nobullets">
@@ -38,9 +34,15 @@
               <@spring.formTextarea 'form.description' /> 
             </li>
             <li>
-              <button class="btn">Update Category</button>
-              <a class="btn" href="<@spring.url '/admin' />">Cancel</a>
+              <label for="category">Category</label>
+              <select>
+                <option selected="selected">${form.category }</option>
+              </select>
             </li>
+            <li>
+              <button class="btn">Update Product</button>
+              <a class="btn" href="<@spring.url '/admin' />">Cancel</a>
+            </li>        
           </ul>
           </fieldset>
         </form>
@@ -48,6 +50,5 @@
       <div class="translucent-bg-white"></div>
     </div>
   </div>
-  
 </body>
 </html>

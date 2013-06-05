@@ -1,4 +1,4 @@
-package com.kemika.web.utils;
+package com.kemika.web.support;
 
 import java.text.MessageFormat;
 import java.util.Locale;

@@ -1,7 +1,7 @@
 <#import "/spring.ftl" as spring />
 <#import "../templates/navbar.ftl" as navbar />
 <#import "../templates/includes.ftl" as includes />
-<#import "../templates/footer.ftl" as footer />
+<#import "../templates/tools.ftl" as tools />
 
 <!DOCTYPE html>
 <html>
@@ -49,19 +49,26 @@
                   <h3 class="inline-block">
                     <a href="<@spring.url '/category/${category.urlFragment }' />">${category.name }</a>
                   </h3>
-                  <div class="category-options inline-block">
-                    <a href="<@spring.url '/admin/category/edit/${category.id}' /> ">Edit</a>
-                    <a href="<@spring.url '/admin/category/delete/${category.id }' />">Delete</a>
+                  <div class="btn-group category-options pull-right">
+                    <a class="btn" href="<@spring.url '/admin/category/edit/${category.id}' /> ">Edit</a>
+                    <a class="btn" href="<@spring.url '/admin/category/delete/${category.id }' />">Delete</a>
                   </div>
                 </dt>
-                <dd class="category-description">${category.description }</dd>
+                <dd class="category-description"><@tools.nl2br string=category.description /></dd>
                 <#if (category.products?size > 0)>
-                  <strong style="margin-left: 30px;">Products</strong>
-                  <ol style="margin-left: 60px; list-style-type: decimal;">
-                  <#list category.products as product>
-                    <li><a href="<@spring.url '/product/${product.urlFragment }' />"><strong>${product.name }</strong></a> - ${product.description }</li>
-                  </#list>
-                  </ol>
+                  <div class="mt20">
+                    <strong style="margin-left: 30px;">Products</strong>
+                    <ol style="margin-left: 60px; list-style-type: decimal;">
+                    <#list category.products as product>
+                      <li>
+                        <a href="<@spring.url '/product/${product.urlFragment }' />"><strong>${product.name }</strong></a>
+                        <a class="btn" href="<@spring.url '/admin/product/edit/${product.id}' /> ">Edit</a>
+                        <a class="btn" href="<@spring.url '/admin/product/delete/${product.id }' />">Delete</a>
+                        <p><@tools.nl2br string=product.description />
+                      </li>
+                    </#list>
+                    </ol>
+                  </div>
                 </#if>
               </dl>
             </td>
@@ -69,8 +76,7 @@
           </#list>
         </table>
       </div>
-      <div class="translucent-bg-white">
-      </div>
+      <div class="translucent-bg-white"></div>
     </div>
   </div>
   

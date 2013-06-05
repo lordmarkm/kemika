@@ -1,4 +1,4 @@
-package com.kemika.web.utils;
+package com.kemika.web.support;
 
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;

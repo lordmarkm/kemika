@@ -1,7 +1,7 @@
 <#import "/spring.ftl" as spring />
 <#import "../templates/navbar.ftl" as navbar />
 <#import "../templates/includes.ftl" as includes />
-<#import "../templates/footer.ftl" as footer />
+<#import "../templates/tools.ftl" as footer />
 
 <!DOCTYPE html>
 <html>
@@ -47,8 +47,7 @@
           </tbody>
         </table>
       </div>
-      <div class="translucent-bg-white">
-      </div>
+      <div class="translucent-bg-white"></div>
     </div>
   </div>
   

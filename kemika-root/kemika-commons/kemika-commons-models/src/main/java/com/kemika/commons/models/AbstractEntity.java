@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
+import org.hibernate.annotations.Type;
+
 @MappedSuperclass
 public abstract class AbstractEntity {
 
@@ -19,6 +21,7 @@ public abstract class AbstractEntity {
 	private String urlFragment;
 	
 	@Column(name = "description", nullable = false)
+	@Type(type="text")
 	private String description;
 
 	public long getId() {

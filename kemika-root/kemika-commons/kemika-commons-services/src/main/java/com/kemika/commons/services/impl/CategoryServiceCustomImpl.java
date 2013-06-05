@@ -28,7 +28,8 @@ public class CategoryServiceCustomImpl implements CategoryServiceCustom {
 	
 	private void setUrlFragment(Category category) {
 		String candidate = NameUtil.toUrlFragment(category.getName());
-		while(cats.findByUrlFragment(candidate) != null) {
+		while(cats.findByUrlFragment(candidate) != null
+				&& cats.findByUrlFragment(candidate).getId() != category.getId()) { //skip logic for edit
 			candidate += RandomStringUtils.randomAlphabetic(1);
 		}
 		category.setUrlFragment(candidate);
@@ -45,6 +46,7 @@ public class CategoryServiceCustomImpl implements CategoryServiceCustom {
 		Category old = cats.findOne(id);
 		old.setName(updated.getName());
 		old.setDescription(updated.getDescription());
+		setUrlFragment(old);
 	}
 	
 	@SuppressWarnings("unchecked")

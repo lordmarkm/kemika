@@ -23,7 +23,7 @@ import com.kemika.commons.services.CategoryService;
 import com.kemika.commons.services.ProductService;
 import com.kemika.web.dto.FileUploadForm;
 import com.kemika.web.html.controller.ImageController;
-import com.kemika.web.utils.NoImage;
+import com.kemika.web.support.NoImage;
 
 @Component
 public class ImageControllerImpl implements ImageController {

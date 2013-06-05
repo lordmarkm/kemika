@@ -8,13 +8,14 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import com.kemika.web.interceptor.NavbarInterceptor;
-import com.kemika.web.utils.DbMessageSource;
+import com.kemika.web.support.DbMessageSource;
 
 @EnableWebMvc
 @Configuration
@@ -35,6 +36,11 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 //        messageSource.setCacheSeconds(0);
 //        return messageSource;
     	return messageSource;
+    }
+    
+    @Bean
+    public LocalValidatorFactoryBean defaultValidator() {
+    	return new LocalValidatorFactoryBean();
     }
     
     /**

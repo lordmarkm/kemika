@@ -56,5 +56,5 @@ public class ProductServiceCustomTest {
 		Product saved = service.findByName(p.getName());
 		assertNotNull(saved);
 	}
-	
+
 }

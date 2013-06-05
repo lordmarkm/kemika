@@ -72,15 +72,6 @@ public class ProductServiceTest {
 	}
 	
 	@Test
-	public void testDelete() {
-		Product p = save();
-		assertNotNull(p);
-		assertNotNull(service.findByName(p.getName()));
-		service.delete(p.getId());
-		assertTrue(service.findByName(p.getName()) == null);
-	}
-	
-	@Test
 	public void testUrlFragment() {
 		Category c = new Category();
 		c.setName("Cancer");
@@ -93,5 +84,30 @@ public class ProductServiceTest {
 		
 		Product saved = service.create(product, "Cancer");
 		assertEquals(NameUtil.toUrlFragment(productName), saved.getUrlFragment());
+	}
+	
+	@Test
+	public void testRemove() {
+		Category cat = new Category();
+		cat.setName("wat");
+		cat.setDescription("wat");
+		cats.save(cat);
+		
+		Product pr = new Product();
+		pr.setName(productName);
+		pr.setDescription(productDesc);
+		pr.setCategory(cat);
+		
+		cat.getProducts().add(pr);
+		cat = cats.save(cat);
+		
+		assertEquals(1, cat.getProducts().size());
+
+		Product p = cat.getProducts().get(0); 
+		assertNotNull(p);
+		assertNotNull(service.findOne(p.getId()));
+		assertNotNull(service.findByName(p.getName()));
+		service.remove(p.getId());
+		assertTrue(service.findByName(p.getName()) == null);
 	}
 }

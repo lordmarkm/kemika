@@ -6,6 +6,9 @@
 .navbar-span {
 	height: 50px;
 }
+.navbar .dropdown-menu {
+	z-index: 9001;
+}
 
 li.dropdown.open a.navbar-main {
 	background-color: #36348C !important;

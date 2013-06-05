@@ -4,6 +4,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.kemika.security.models.Account;
 
-public interface AccountService extends JpaRepository<Account, Long> {
+public interface AccountService extends JpaRepository<Account, Long>, AccountServiceCustom {
+
+	Account findByUsername(String name);
 
 }

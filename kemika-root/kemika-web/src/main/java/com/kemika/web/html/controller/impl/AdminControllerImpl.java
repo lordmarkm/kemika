@@ -9,6 +9,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
@@ -31,6 +34,9 @@ public class AdminControllerImpl implements AdminController {
 	
 	@Resource
 	private ProductService products;
+	
+    @Resource
+    private LocalValidatorFactoryBean validator;
 	
 	@Override
 	public ModelAndView dashboard() {
@@ -85,9 +91,7 @@ public class AdminControllerImpl implements AdminController {
 	
 	@Override
 	public 	ModelAndView deleteCategory(@PathVariable Long id) {
-		Category cat = categories.findOne(id);
-		categories.delete(cat);
-		
+		categories.delete(id);
 		return new ModelAndView("redirect:/admin");
 	}
 
@@ -126,5 +130,28 @@ public class AdminControllerImpl implements AdminController {
 			.addObject("form", new ProductForm(product));
 	}
 
+	@Override
+	public ModelAndView editProduct(@Valid @ModelAttribute ProductForm form, BindingResult result) {
+		
+		if(result.hasErrors()) {
+			log.error("Error!!! {}", result.getAllErrors());
+			return new ModelAndView("admin/editproduct")
+				.addObject("form", form);
+		}
+		
+		products.update(form.getId(), form.toProduct());
 
+		return new ModelAndView("redirect:/admin");
+	}
+
+	@Override
+	public ModelAndView deleteProduct(@PathVariable Long id) {
+		products.remove(id);
+		return new ModelAndView("redirect:/admin");
+	}
+	
+	@InitBinder
+    public void initBinder(WebDataBinder binder) {
+        binder.setValidator(validator);
+    }
 }

@@ -8,7 +8,6 @@
   <name>Kemika</name>
   <modules>
     <module>kemika-web</module>
-    <module>kemika-db</module>
     <module>kemika-commons</module>
     <module>kemika-security</module>
   </modules>
